@@ -12,6 +12,7 @@
 
 #image {
     background-color: sienna;
+    max-width: 500px;
 }
 #tribute-info {
     background-color: slategrey;
