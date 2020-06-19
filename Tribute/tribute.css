@@ -1,5 +1,9 @@
 #main {
     background-color: lightgoldenrodyellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #title {
@@ -7,17 +11,33 @@
 }
 
 #img-div{
-    background-color: rosybrown;
+    background-color: black;
+    padding: 20px;
+    width: 560px;
+    max-width: 90%;
+    margin: 20px;
 }
 
 #image {
-    background-color: sienna;
-    max-width: 500px;
+    display: block;
+    background-color: saddlebrown;
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 0 auto;
 }
+
+#img-caption {
+    background-color: teal;
+    margin: 1em 0 0 0;
+}
+
+
 #tribute-info {
     background-color: slategrey;
 }
 
 #tribute-link {
     background-color: turquoise;
+    text-align: center;
 }
