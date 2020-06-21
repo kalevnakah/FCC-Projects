@@ -9,10 +9,37 @@
   <body>
     <script src="../bundle.js"></script>
       <header>
-        <h1>Survey Form</h1>
+        <h1 id="title">Survey Form</h1>
+        <p id="description">Tell me about yourself!</p>
       </header>
       <main>
-
+        <form id="survey-form">
+            <label id="name-label" for="name">Name:</labe>
+           <input id="name" type="text" placeholder="Your Name" required>
+           <label id="email-label" for="email">Email:</label>
+           <input id="email" type="email" placeholder="example@domain.com" required>
+           <label id="number-label" for="number" >Age (optional):</label>
+           <input id="number" type="number" placeholder=42 min=1 max=120>
+            <select id="dropdown" name="role">
+                <option value="hire">Hiring Manger</option>
+                <option value="boss">CEO</option>
+                <option value="manager">CTO</option>
+                <option value="employee">Employee</option>
+                <option value="friend">Friend</option>
+            </select> 
+            <input type="radio" name="score" value="Awesome">Awesome!
+            <input type="radio" name="score" value="Amazing">Amazing!
+            <input type="radio" name="score" value="Fabulous">Fabulous!
+            <input type="radio" name="score" value="Meh">Meh
+            <input type="radio" name="score" value="NC">No Comment!
+            <input type="checkbox" name="improve" value="Design">Design
+            <input type="checkbox" name="improve" value="Code">Code
+            <input type="checkbox" name="improve" value="Accessibility">Accessibility
+            <input type="checkbox" name="improve" value="Responsiveness">Responsiveness
+            <input type="checkbox" name="improve" value="content">Content     
+            <textarea></textarea>
+            <input id="submit" type="submit">
+        </form>
       </main>
       <footer>
 
