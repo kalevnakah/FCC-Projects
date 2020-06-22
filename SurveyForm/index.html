@@ -12,22 +12,36 @@
         <h1 id="title">KalevNakah.me Survey Form</h1>
         <p id="description">Thank you for taking the time to critique my work</p>
       </header>
-      <main>
         <form id="survey-form">
             <div class="form-group">
                 <label id="name-label" for="name">Name</label>
-                <input id="name" type="text" placeholder="Enter Your Name" required>
+                <input 
+                    id="name" 
+                    type="text" 
+                    placeholder="Enter Your Name" 
+                    class="form-control" 
+                    required>
             </div>
             <div class="form-group">
                 <label id="email-label" for="email">email</label>
-                <input id="email" type="email" placeholder="example@domain.com" required>
+                <input 
+                    id="email" 
+                    type="email" 
+                    placeholder="example@domain.com" 
+                    class="form-control"
+                    required>
             </div>
             <div class="form-group">
                 <label id="number-label" for="number" >Age (optional)</label>
-                <input id="number" type="number" placeholder=42 min=1 max=120>
+                <input
+                    id="number" 
+                    type="number" 
+                    placeholder=42 
+                    min=1 max=120
+                    class="form-control">
             </div>
             <div class="form-group">
-                <select id="dropdown" name="role">
+                <select id="dropdown" name="role" class="form-control">
                     <option value="hire">Hiring Manger</option>
                     <option value="boss">CEO</option>
                     <option value="manager">CTO</option>
@@ -36,27 +50,83 @@
                 </select>
             </div>
             <div class="form-group"> 
-                <label><input type="radio" name="score" value="Awesome">Awesome!</label>
-                <label><input type="radio" name="score" value="Amazing">Amazing!</label>
-                <label><input type="radio" name="score" value="Fabulous">Fabulous!</label>
-                <label><input type="radio" name="score" value="Meh">Meh</label>
-                <label><input type="radio" name="score" value="NC">No Comment!</label>
+                <label><input 
+                    type="radio" 
+                    name="score" 
+                    value="Awesome"
+                    class="input-radio" 
+                    >Awesome!</label>
+                <label><input 
+                    type="radio" 
+                    name="score" 
+                    value="Amazing"
+                    class="input-radio">
+                    Amazing!</label>
+                <label><input 
+                    type="radio" 
+                    name="score" 
+                    value="Fabulous"
+                    class="input-radio" >
+                    Fabulous!</label>
+                <label><input 
+                    type="radio" 
+                    name="score" 
+                    value="Meh"
+                    class="input-radio">
+                    Meh</label>
+                <label><input 
+                    type="radio" 
+                    name="score" 
+                    value="NC"
+                    class="input-radio">
+                    No Comment!</label>
             </div>
             <div class="form-group">
-                <label><input type="checkbox" name="improve" value="Design">Design</label>
-                <label><input type="checkbox" name="improve" value="Code">Code</label>
-                <label><input type="checkbox" name="improve" value="Accessibility">Accessibility</label>
-                <label><input type="checkbox" name="improve" value="Responsiveness">Responsiveness</label>
-                <label><input type="checkbox" name="improve" value="content">Content</label>
+                <label><input 
+                    type="checkbox" 
+                    name="improve" 
+                    value="Design"
+                    class="input-checkbox">
+                    Design</label>
+                <label><input 
+                    type="checkbox" 
+                    name="improve" 
+                    value="Code"
+                    class="input-checkbox">
+                    Code</label>
+                <label><input 
+                    type="checkbox" 
+                    name="improve" 
+                    value="Accessibility"
+                    class="input-checkbox">
+                    Accessibility</label>
+                <label><input 
+                    type="checkbox" 
+                    name="improve" 
+                    value="Responsiveness"
+                    class="input-checkbox" >
+                    Responsiveness</label>
+                <label><input 
+                    type="checkbox" 
+                    name="improve" 
+                    value="content"
+                    class="input-checkbox">
+                    Content</label>
             </div>
             <div class="form-group">
-                <textarea></textarea>
+                <label for="comments">Any comments or suggestions?</label>
+                <textarea 
+                    id="comments"
+                    class="form-control" >
+                </textarea>
             </div>
             <div class="form-group">
-                <input id="submit" type="submit">
+                <input 
+                    id="submit" 
+                    type="submit" 
+                    class="form-control" >
             </div>
         </form>
-      </main>
       <footer>
 
       </footer>
