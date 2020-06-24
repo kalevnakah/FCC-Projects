@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
 
 body {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     z-index: -1;
