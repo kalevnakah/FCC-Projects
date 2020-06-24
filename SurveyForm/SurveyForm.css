@@ -8,22 +8,25 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0)
-      ),
-    url(dog.jpg);
-    background-size: 100%;
+        205deg,
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0)),
+        url(dog.jpg);
+    background-size: cover;  
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: #34525C;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     padding: 1%;
     box-sizing: border-box;
     color: white;
 }
 
 header {
-    align-self: center;
+    align-self: left;
     padding: 2.5rem 0.625rem;
     width: 100%;
     max-width: 500px;
@@ -37,7 +40,7 @@ h1 {
 }
 
 form {
-    align-self: center;
+    align-self: left;
     border: thick solid limegreen;
     background-color: rgba(0, 0, 0, 0.6);
     padding: 2.5rem 0.625rem;
