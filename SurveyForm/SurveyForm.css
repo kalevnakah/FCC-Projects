@@ -8,11 +8,17 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding: 1%;
+    box-sizing: border-box;
 }
 
 header {
     background-color: plum;
     align-self: center;
+    padding: 2.5rem 0.625rem;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -25,13 +31,10 @@ form {
     background-color: blue;
     padding: 2.5rem 0.625rem;
     border-radius: .5rem;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
 }
-
-@media (min-width: 480px) {
-    form {
-      padding: 2.5rem;
-    }
-  }
 
 label {
     display: flex;
@@ -48,6 +51,8 @@ textarea {
     font-size: inherit;
     border-radius: .5rem;
     border-style: none;
+    padding: .5rem;
+    box-sizing: border-box;
 }
 
 .form-group {
@@ -59,13 +64,19 @@ textarea {
     display: block;
     width: 100%;
     margin: .25rem auto 0 auto;
+    border-width: 10px;
+    border-color: black;
 }
 
 .input-checkbox .input-radio {
     display: inline-block;
 }
 
-
+.form-control:focus {
+    border-color: limegreen;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
 
 
 
