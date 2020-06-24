@@ -25,7 +25,7 @@
             <div class="form-group">
                 <label id="email-label" for="email">email</label>
                 <input 
-                    id="email" 
+                    id="Email" 
                     type="email" 
                     placeholder="example@domain.com" 
                     class="form-control"
@@ -41,21 +41,19 @@
                     class="form-control">
             </div>
             <div class="form-group">
+                <label id="dropdown-label" for="dropdown">Who are you?</label>
                 <select id="dropdown" name="role" class="form-control">
                     <option value="hire">Hiring Manger</option>
                     <option value="boss">CEO</option>
-                    <option value="manager">CTO</option>
+                    <option value="chief">CTO</option>
+                    <option value="manager">Manager</option>
                     <option value="employee">Employee</option>
                     <option value="friend">Friend</option>
+                    <option value="browser">Just passing by</option>
                 </select>
             </div>
             <div class="form-group"> 
-                <label><input 
-                    type="radio" 
-                    name="score" 
-                    value="Awesome"
-                    class="input-radio" 
-                    >Awesome!</label>
+                <label id="score-label" for="score">What do you think of my portfolio?</label>
                 <label><input 
                     type="radio" 
                     name="score" 
@@ -77,11 +75,18 @@
                 <label><input 
                     type="radio" 
                     name="score" 
+                    value="improve"
+                    class="input-radio">
+                    Needs Improvement</label>
+                <label><input 
+                    type="radio" 
+                    name="score" 
                     value="NC"
                     class="input-radio">
                     No Comment!</label>
             </div>
             <div class="form-group">
+                <label id="improve-label" for="improve">What could use improving?</label>
                 <label><input 
                     type="checkbox" 
                     name="improve" 
@@ -112,19 +117,25 @@
                     value="content"
                     class="input-checkbox">
                     Content</label>
+                <label><input 
+                    type="checkbox" 
+                    name="improve" 
+                    value="documentation"
+                    class="input-checkbox">
+                    Documentation</label>
             </div>
             <div class="form-group">
-                <label for="comments">Any comments or suggestions?</label>
+                <label id="comments-label" for="comments">Any constructive criticism?</label>
                 <textarea 
                     id="comments"
                     class="form-control" >
                 </textarea>
             </div>
             <div class="form-group">
-                <input 
+                <input
                     id="submit" 
-                    type="submit" 
-                    class="form-control" >
+                    type="submit"
+                    class="form-control">
             </div>
         </form>
       <footer>
