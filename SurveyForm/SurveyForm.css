@@ -80,11 +80,9 @@ textarea {
     width: 100%;
     margin: 0 auto 0 auto;
     border-width: 10px;
-    border-color: black;
+    border-color: red;
 }
 
-.input-checkbox .input-radio {
-}
 
 .form-control:focus {
     border: solid limegreen;
@@ -98,4 +96,11 @@ textarea {
     color: black;
     border-radius: .5rem;
     font-weight: 800;
+}
+
+input {
+    display: inline-block;
+    border: solid thick blue;
+    border-radius: 0rem;
+    color: red;
 }
