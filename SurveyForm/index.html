@@ -42,7 +42,8 @@
             </div>
             <div class="form-group">
                 <label id="dropdown-label" for="dropdown">Who are you?</label>
-                <select id="dropdown" name="role" class="form-control">
+                <select id="dropdown" name="role" class="form-control" required>
+                    <option value="" disabled selected>Choose a title.</option>
                     <option value="hire">Hiring Manger</option>
                     <option value="boss">CEO</option>
                     <option value="chief">CTO</option>
@@ -128,9 +129,9 @@
                 <label id="comments-label" for="comments">Any constructive criticism?</label>
                 <textarea 
                     id="comments"
-                    class="input-textarea form-control" >
-                </textarea>
-            </div>
+                    class="input-textarea form-control"
+                    placeholder="Penny for your thoughts?"></textarea>
+                    </div>
             <div class="form-group">
                 <input
                     id="submit" 

@@ -104,3 +104,13 @@ textarea {
     resize: vertical;
     min-height: 120px;
   }
+
+  select:required:invalid {
+    color: #666;
+  }
+  option[value=""][disabled] {
+    display: none;
+  }
+  option {
+    color: #000;
+  }
