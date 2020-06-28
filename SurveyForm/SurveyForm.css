@@ -43,7 +43,7 @@ form {
     align-self: left;
     border: thick solid limegreen;
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 2.5rem 0.625rem;
+    padding: 1rem 0.625rem;
     border-radius: .5rem;
     width: 100%;
     max-width: 500px;
@@ -51,11 +51,11 @@ form {
 }
 
 label {
-    display: flex;
+    display: block;
     align-items: left;
     text-align: left;
     font-size: 1.125rem;
-    padding: .5rem;
+    margin-bottom: .25rem;
 }
 
 input,
@@ -78,9 +78,6 @@ textarea {
 .form-control {
     display: block;
     width: 100%;
-    margin: 0 auto 0 auto;
-    border-width: 10px;
-    border-color: red;
 }
 
 
@@ -98,9 +95,12 @@ textarea {
     font-weight: 800;
 }
 
-input {
-    display: inline-block;
-    border: solid thick blue;
-    border-radius: 0rem;
-    color: red;
+.input-radio, .input-checkbox {
+    margin-right: .5rem;
+
 }
+
+.input-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
