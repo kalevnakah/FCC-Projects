@@ -4,23 +4,39 @@
     <meta charset="utf-8">
     <title>Kalev Nakah</title>
     <meta name="description" content="Free Code Camp Responsive Web Design Projects - Build a Product Landing Page by Caleb Schmidt.">
-    <link rel="stylesheet" type="text/css" href="tribute.css">
+    <style>
+      #nav-bar {
+        position: absolute;
+        top: 0
+      }
+      .nav-link {
+        display: flex;
+      }
+      @media only screen and (max-width: 600px) {
+        body {
+          background-color: lightblue;
+        }
+      }
+    </style>
   </head>
   <body>
     <script src="../bundle.js"></script>
-      <header id="head">
-        <img id="header-img" src="image.png">
-        <a name="nav-link">
-          <nav class="nav-link"></nav>
-        </a>  
-      </header>
-      <main>
-        <video id="video"></video>
-        <form id="form">
-          <input id="email" type="email" placeholder="example@domain.com" >
-          <input id="submit" type="submit" value="https://www.freecodecamp.com/email-submit">
+      <header id="header">
+        <img id="header-img" src="https://media.makeameme.org/created/widgets-widgets-everywhere.jpg">
+        <nav id="nav-bar">
+          <a class="nav-link" href="#form">Form</a>
+          <a class="nav-link" href="#video">Video</a>
+          <a class="nav-link" href="#footer">Footer</a>
+        </nav>  
+    </header>
+      <main name="main">
+        <video id="video" src="youtube.com"></video>
+        <form id="form" action="https://www.freecodecamp.com/email-submit">
+          <input id="email" type="email" placeholder="example@domain.com" name="email">
+          <input id="submit" type="submit">Submit</button>
         </form>
       </main>
-      <footer></footer>
+      <footer id=footer>
+      </footer>
   </body>
 </html>
