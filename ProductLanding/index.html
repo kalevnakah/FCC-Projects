@@ -3,18 +3,108 @@
   <head>
     <meta charset="utf-8">
     <title>Kalev Nakah</title>
-    <meta name="description" content="Free Code Camp Responsive Web Design Projects - Build a Product Landing Page by Caleb Schmidt.">
+    <meta name="description" 
+      content="Free Code Camp Responsive Web Design Projects - Build a Product Landing Page by Caleb Schmidt.">
     <style>
+      body {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: red;
+        <!-- margin: 0; -->
+      }
+      header {
+        display: inline-flex;
+        position: sticky;
+        top: 0;
+        left: 0;
+        height: 10em;
+        width: 100%;
+        background-color: white;
+        justify-content: center;
+      }
+      main {
+        text-align: center;
+        justify-items: center;
+        background-color: orange;
+        left: 0;
+        width: 100%;
+        min-width: 180px;
+      }
+      h1 {
+        margin-left: 1em;
+        align-self: center;
+      }
+      main h1{
+        margin: 0 1.5rem 0 1.5rem;
+        padding: none;
+        align-self: center;
+      }
+      p {
+        margin: 2rem;
+      }
+      form {
+        display:inline-block;
+        background-color: orchid;
+        Width: 100%;
+        text-align: center;
+        font-size: 1.25em;
+        margin: 1rem 0 0 0;
+      }
+      input, label {
+        margin:10px;
+      }
       #nav-bar {
-        position: absolute;
-        top: 0
+        float: right;
+        top: 0;
+        align-self: center;
+        margin-left: 2em;
+      }
+      #video {
+        width: 560px;
+        height: 315px;
+        margin: 1.1rem;
+      }
+      #price {
+
+        background-color: orchid;
+        top: 0;
+        margin: 0 10% 0 10% 0;
+        min-width: 180px;
+        justify-content: center;
+        align-items: stretch;
+      }
+      #price h1 {
+        margin: 5px;
+        padding: 0;
+        background-color: red;
+      }
+      #price p {
+        background-color:snow;
+      }
+      .price {
+        background-color: seagreen;
+        margin: .5em;
+        border: 5px solid black;
+        max-width: 250px;
+        min-width: 180px;
+        align-content: space-between;
+      }
+      #pricetitle {
+        background-color: peru;
+        padding: 1em;
+        font-size: 1.5em;
       }
       .nav-link {
-        display: flex;
+        margin: .5em;
+        font-size: 1.5em;
       }
-      @media only screen and (max-width: 600px) {
-        body {
-          background-color: lightblue;
+      @media only screen and (max-width: 750px) {
+        #price {
+          width: 100%;
+          flex-direction: column;
+        }
+        #video {
+          height: 157.5px;
+          width: 280px;
         }
       }
     </style>
@@ -22,21 +112,66 @@
   <body>
     <script src="../bundle.js"></script>
       <header id="header">
-        <img id="header-img" src="https://media.makeameme.org/created/widgets-widgets-everywhere.jpg">
+      <img id="header-img" 
+            src="https://www.logolynx.com/images/logolynx/50/5009f8f187bcbdc35cdc79a7b8d3371a.jpeg" 
+            height="150px" 
+            Length="150px">
+        <h1>Join The Winning Team!</h1>
         <nav id="nav-bar">
-          <a class="nav-link" href="#form">Form</a>
+          <a class="nav-link" href="#form">Benefits</a>
           <a class="nav-link" href="#video">Video</a>
-          <a class="nav-link" href="#footer">Footer</a>
+          <a class="nav-link" href="#price">Price</a>
         </nav>  
     </header>
-      <main name="main">
-        <video id="video" src="youtube.com"></video>
-        <form id="form" action="https://www.freecodecamp.com/email-submit">
-          <input id="email" type="email" placeholder="example@domain.com" name="email">
-          <input id="submit" type="submit">Submit</button>
-        </form>
-      </main>
-      <footer id=footer>
-      </footer>
+    <main name="main">
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <label for="email">Get the winning playbook.</label></br>
+        <input id="email" type="email" placeholder="example@domain.com" name="email"></br>
+        <input id="submit" type="submit"></input>
+      </form>
+      <h1>New Life</h1>
+      <p>Become born again. Hit the reset button and start living a life full and abundant. 
+        Jesus answered, “Truly, truly, I say to you, unless one is born of water and the Spirit, he cannot enter the kingdom of God. - John 3:5</p>
+      <h1>Transormed Mind</h1>
+      <p>See the world through new lens. Learn to think about what your thinking about. Change your reality.</p>
+      <h1>Loving Community</h1>
+      <p>Become apart of the family of God. You will never be alone you have the common bond of Jesus' blood.</p>
+      <iframe id=video
+        src="https://www.youtube.com/embed/cmIUuhhV92g" frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+      <div id="price">
+        <div class="price">
+          <div id="pricetitle">Student</div>
+          <p>In the same way, those of you who do not give up everything you have cannot be my disciples.</br> 
+            - Luke 14:13</p>
+          <h1>Cost:</br> Past Life</h1>
+          <button onclick="window.location.href='https://w3docs.com';">
+            Click Here
+          </button>
+        </div>
+        <div class="price">
+          <div id="pricetitle">Missionary</div>
+          <p>As it is written: ‘How beautiful are the feet of those who bring good news!’</br>
+            - Romans 10:15</p>
+          <h1>Cost:</br>Comfort</h1>
+          <button onclick="window.location.href='https://w3docs.com';">
+            Click Here
+          </button>
+        </div>
+        <div class="price">
+          <div id="pricetitle">Martyr</div>
+          <p>I have been crucified with Christ. 
+            It is no longer I who live, but Christ who lives in me.</br>s
+            - Galatians 2:20</p>
+          <h1>Cost:</br>Your Life</h1>
+          <button onclick="window.location.href='https://w3docs.com';">
+            Click Here
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer>
+    </footer>
   </body>
 </html>
