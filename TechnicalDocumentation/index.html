@@ -8,10 +8,15 @@
     <style>
       body, html {
         font-family: "Open Sans", Arial, sans-serif;
+        font-size: 1.5em;
         margin: 0;
         padding: 0;
         background-color: black;
         color: whitesmoke;
+      }
+      header {
+        background-color: green;
+        border: 2px solid hotpink;
       }
       #navbar {
         position: fixed;
@@ -23,10 +28,19 @@
         border-right: solid;
         border-color: rgba(0, 22, 22, 0.4);
         background-color: darkblue;
+        border: 2px solid chartreuse;
+      }
+      #navbar ul {
+        background-color:darkred;
+        list-style: none;
+      }
+      #navbar li {
+        background-color: deepskyblue;
       }
       #main-doc {
         background-color: darkgreen;
-        margin-left: 300px;
+        margin-left: 304px;
+        border: 2px dotted yellowgreen;
       }
       .main-section{
         background-color: darkorchid;
@@ -43,175 +57,236 @@
     <script src="../bundle.js"></script>
     <nav id="navbar">
       <header>The Gospel</header>
-      <a class="nav-link" href="#Genesis">Genesis</a>
-      <a class="nav-link" href="#The_Flood">The Flood</a>
-      <a class="nav-link" href="#Passover">Passover</a>
-      <a class="nav-link" href="#Christmas">Christmas</a>
-      <a class="nav-link" href="#Jesus'_Death">Jesus' Death</a>
-      <a class="nav-link" href="#Resurrection">Resurrection</a>
-      <a class="nav-link" href="#The_Church">The Church</a>
+      <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#Genesis">Genesis</a></li>
+        <li><a class="nav-link" href="#The_Flood">The Flood</a></li>
+        <li><a class="nav-link" href="#Passover">Passover</a></li>
+        <li><a class="nav-link" href="#Christmas">Christmas</a></li>
+        <li><a class="nav-link" href="#Jesus'_Death">Jesus' Death</a></li>
+        <li><a class="nav-link" href="#Resurrection">Resurrection</a></li>
+        <li><a class="nav-link" href="#The_Church">The Church</a></li>
+        <li><a class="nav-link" href="#Revelation">Revelation</a></li>
+      </ul>
     </nav>
     <main id="main-doc">
-        <section class="main-section" id="Genesis">
-            <header>Genesis</header>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <code></code>
-            <code></code>
-            <code></code>
-            <code></code>
-            <code></code>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            </section>
-        <section class="main-section" id="The_Flood">
-            <header>The Flood</header>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <code></code>
-            <code></code>
-            <code></code>
-            <code></code>
-            <code></code>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </section>
-        <section class="main-section" id="Passover">
-            <header>Passover</header>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <code></code>
-            <code></code>
-            <code></code>
-            <code></code>
-            <code></code>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </section>
-        <section class="main-section" id="Christmas">
-            <header>Christmas</header>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <code></code>
-            <code></code>
-            <code></code>
-            <code></code>
-            <code></code>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </section>
-        <section class="main-section" id="Jesus'_Death">
-            <header>Jesus' Death</header>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <code></code>
-            <code></code>
-            <code></code>
-            <code></code>
-            <code></code>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </section>
-        <section class="main-section" id="Resurrection">
-          <header>Resurrection</header>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <code></code>
-          <code></code>
-          <code></code>
-          <code></code>
-          <code></code>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <p>The Gospel or "The Good News" is something every christian is excited to share
+          or at least should be excited to share. It's so simple, yet it's one of the hardest things to explain.
+          This technical document is an attempt to break down the Gospel into it's simplest form
+          and make the technical things a little easier to digest.
+        </p>
+        <code>John 3:16 = For God so loved the world that he gave his one and only Son, 
+          that whoever believes in him shall not perish but have eternal life.</code>
+        <p>Yep! that's it. The entire bible boiled down to it's essence, the good news.</p>
+        <ol>
+          <li>The Bad News
+            <P>- Where going to perish.</P></li>
+          <li>The Good News
+            <p>- Jesus can save us.</p></li>
+        </ol>
+        <p>In part one of this document we will break down the bad news.
+          You can fully appreciate the good without knowing the bad.
+          Maybe your life is awesome and pain free, 
+          you may not believe that you need to be saved or that you will perish.</p>
+        <p>In part two we will explain the good news. he truth is we all need to be saved.
+          If not from the evil of the world, than maybe from ourselves.
+        </p>
+        <code>Jeremiah 17:9 = The heart is deceitful above all things
+          and beyond cure.
+          Who can understand it?</code>
+        <p>Here we go!</p>
       </section>
-        <section class="main-section" id="The_Church">
-          <header>The Church</header>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <code></code>
-          <code></code>
-          <code></code>
-          <code></code>
-          <code></code>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+      <section class="main-section" id="Genesis">
+        <header>Genesis</header>
+        <code>Genesis Chapter 1:1 = In the beginning God created the heavens and the earth.</code>
+          <ul>
+            <li>Day 1: Light & Darkness / Day & Night</li>
+            <li>Day 2: The Sky</li>
+            <li>Day 3: Land & Plants</li>
+            <li>Day 4: Sun, Moon, Planets & Stars</li>
+            <li>Day 5: Sea Creatures & Winged Creatures</li>
+            <li>Day 6: Humans & Land Creatures</li>
+            <li>Day 7: God rested</li>
+          </ul>
+        <p>Everything was perfect in the beginning. No evil. No Death. Just life.
+          God but mankind in charge of everything of earth and gave him freedom.
+          There was only one rule...</p>
+        <code>Genesis 2:16 = And the Lord God commanded the man, 
+          “You are free to eat from any tree in the garden; 
+          but you must not eat from the tree of the knowledge of good and evil, 
+          for when you eat from it you will certainly die.”</code>
+        <p>Adam and Eve broke this rule when they were deceived by the serpent, satan.
+          Sin "separation of man and God", labor and birth pains, death and evil enter the world.
+          From this point on every human being needs a savior from our sins, evil, pain, and death.
+        </p>
+      </section>
+      <section class="main-section" id="The_Flood">
+        <header>The Flood</header>
+        <code>Genesis 6:11 = Now the earth was corrupt in God’s sight and was full of violence. 
+          12 God saw how corrupt the earth had become, 
+          for all the people on earth had corrupted their ways. 
+          13 So God said to Noah, “I am going to put an end to all people, 
+          for the earth is filled with violence because of them. 
+          I am surely going to destroy both them and the earth.</code>
+        <p>God makes up his mind to hit the reset button on the earth by 
+          flooding the entire earth for 40 days and 40 nights. 
+          Only Noah, his family and two of every kind of creature male and female were spared on a large boat.
+          Why Noah?</p>
+        <code>Genesis 6:8-9 = But Noah found favor in the eyes of the Lord...
+          Noah was a righteous man, blameless among the people of his time, and he walked faithfully with God.</code>
+        <p>An important note here... The redemption of man kind came only by blood of those who died in the flood.
+          There is always a price to pay for the removal of sin. This is God's first attempt to make it right, 
+          but the rebelliousness of humans to disobey God prevails.</p>
+      </section>
+      <section class="main-section" id="Passover">
+        <header>Passover</header>
+        <p>Fast forward a bit and we find a the human race split between two kinds of people.</br>
+          <li>Hebrews - The chosen people of God.</li>
+          <li>Everybody Else "Pagans" - The people who don't follow God.</li></br>
+          The Hebrews rebel and God allows them to become slaves of the Egyptians.
+        </p>
+        <p>God once again steps in to save the people that love him using his might and glory.
+          After 400 years of affliction, God appoints Moses to lead his people to land they call home.
+          Only one problem. Pharaoh "The powerful King of Egypt" doesn't want to loose his slave labor
+          and refuses to let them leave. God inflicted them with ten plagues.</p>
+        <code>Exodus 6:10-11 = Then the Lord said to Moses, 
+          “Go, tell Pharaoh king of Egypt to let the Israelites go out of his country.”</code>
+        <ol>
+          <li>Water turned to blood</li>
+          <li>Frogs</li>
+          <li>Gnats</li>
+          <li>Flies</li>
+          <li>Death of all the livestock</li>
+          <li>Boils</li>
+          <li>Hail Storm</li>
+          <li>Locust</li>
+          <li>Three days of darkness</li>
+          <li>Death of the firstborn son</li>
+        </ol>
+        <p>After the tenth plague, Pharaoh did let the Hebrews leave. 
+          The redemptive 10th plague once again required a sacrifice or a price.
+          For the egyptians it was the blood of their first born son. 
+          For the Hebrews it was the blood of a young male lamb without blemish.
+          Make a mental note here, because this comes back into play later on in the second part.
+          This day is celebrated to this day by Jews and Christians alike in remembrance
+          of the deliverance and saving grace of God's mighty hand.</p>
+      </section>
+      <section class="main-section" id="Christmas">
+        <header>Christmas</header>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <code></code>
+        <code></code>
+        <code></code>
+        <code></code>
+        <code></code>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </section>
+      <section class="main-section" id="Jesus'_Death">
+        <header>Jesus' Death</header>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <code></code>
+        <code></code>
+        <code></code>
+        <code></code>
+        <code></code>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </section>
+      <section class="main-section" id="Resurrection">
+        <header>Resurrection</header>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <code></code>
+        <code></code>
+        <code></code>
+        <code></code>
+        <code></code>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </section>
+      <section class="main-section" id="The_Church">
+        <header>The Church</header>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <code></code>
+        <code></code>
+        <code></code>
+        <code></code>
+        <code></code>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </section>
+      <section class="main-section" id="Revelation">
+        <header>Revelation</header>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <code></code>
+        <code></code>
+        <code></code>
+        <code></code>
+        <code></code>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
       </section>
     </main>
     <footer>
