@@ -8,7 +8,7 @@
     <style>
       body, html {
         font-family: "Open Sans", Arial, sans-serif;
-        font-size: 1.5em;
+        font-size: 1.25em;
         margin: 0;
         padding: 0;
         background-color: black;
@@ -17,6 +17,8 @@
       header {
         background-color: green;
         border: 2px solid hotpink;
+        font-weight: bold;
+        font-size: 1.5em;
       }
       #navbar {
         position: fixed;
@@ -30,12 +32,20 @@
         background-color: darkblue;
         border: 2px solid chartreuse;
       }
+      #navbar header {
+        padding: .5em;
+      }
       #navbar ul {
         background-color:darkred;
         list-style: none;
+        padding: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
       }
       #navbar li {
         background-color: deepskyblue;
+        padding: .25em;
+        border-top: 2px solid black;
       }
       #main-doc {
         background-color: darkgreen;
@@ -44,11 +54,31 @@
       }
       .main-section{
         background-color: darkorchid;
+        padding: .5em;
+      }
+      .main-section p{
+        padding-left: .5em;
+      }
+      .main-section code {
+        display: inline-block;
+        padding-left: 2em;
+      }
+      .main-section li {
+        background-color: red;
+        margin-left: 1em;
+        padding: .1em;
       }
       @media only screen and (max-width: 750px) {
         #navbar {
           position: absolute;
-          top: 0px;
+          width: 100%;
+          height: 300px;
+        }
+        #main-doc {
+          position: relative;
+          margin-left: 0;
+          margin-top: 300px;
+          ;
         }
       }
     </style>
@@ -101,6 +131,7 @@
       </section>
       <section class="main-section" id="Genesis">
         <header>Genesis</header>
+        <p>Let's start from the beginning.</p>
         <code>Genesis Chapter 1:1 = In the beginning God created the heavens and the earth.</code>
           <ul>
             <li>Day 1: Light & Darkness / Day & Night</li>
