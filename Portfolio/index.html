@@ -1,49 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Kalev Nakah</title>
-    <meta name="description" content="Free Code Camp Responsive Web Design Projects - Build a Personal Portfolio Webpage by Caleb Schmidt.">
+    <meta name="description"
+        content="Free Code Camp Responsive Web Design Projects - Build a Personal Portfolio Webpage by Caleb Schmidt.">
     <style>
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
-        }
-        #welcome-section {
-            display: block;
-            position:absolute;
-            top: 0;
-            height: 100%;
-            background-color: brown;
-            z-index: -1;
+            background-color: seagreen;
         }
         #navbar {
+            display: flex;
+            justify-content: flex-end;
             position: fixed;
             top: 0;
+            width: 100%;
+            background-color: pink;
+            border-bottom: 2px solid black;
+            z-index: 9;
         }
+        #navbar ul {
+            display: flex;
+            list-style: none;
+        }
+        .nav-list {
+            margin: 0 1rem;
+        }
+        .nav-list a {
+            display: block;
+            padding: 2rem;
+            font-size: 2.2rem;
+        }
+        #welcome-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            background-color: brown;
+        }
+        #welcome-section p {
+            font-size: 3rem;
+            font-weight: 200;
+            font-style: italic;
+            color:white;
+        }
+        #projects {
+            display: grid;
+            grid-auto-rows: auto;
+            grid-auto-columns: auto;
+            background-color: rebeccapurple;
+            padding: 1em;
+        }
+        .project-tile {
+            margin: 1em;
+            padding: 8px;
+            max-width: 400px;
+            border: 4px dotted blue;
+            background-color: salmon;
+        }
+        .project-img {
+            display:block;
+            height: 300px;
+        }
+        #profile-section {
+            margin: 8px;
+            padding: 8px;
+            background-color: crimson;
+            border: 4px dashed greenyellow;
+            display: flex;
+        }
+
         @media screen and (max-width: 750px) {
-            body, html {
-                background-color: blue;
+            body,
+            html {
+                background-color: black;
             }
         }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <script src="../bundle.js"></script>
     <navbar id="navbar">
-        <a href="#welcome-section">About</a>
-        <a href="#projects">FCC Projects</a>
-        <a href="#profile-link">Contact</a>
+        <ul class="nav-list">
+            <li><a href="#welcome-section">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#profile">Contact</a></li>
+        </ul>
     </navbar>
     <section id="welcome-section">
-        <h1>Welcome</h1>
+        <h1>Hey I am Caleb</h1>
+        <p>a web developer</p>
     </section>
     <section id="projects">
         <div class="project-tile">
-            <a href="http://kalevnakah.me/FCC-Projects/TechnicalDocumentation/">Technical Document</a>
+            <a href="http://kalevnakah.me/FCC-Projects/TechnicalDocumentation/" target="_blank">
+                <img class="project-img" src="TechnicalDocumentation.PNG" alt="Technical Documentation preview image.">
+            Technical Document</a>
+        </div>
+        <div class="project-tile">
+            <a href="http://kalevnakah.me/FCC-Projects/ProductLanding/" target="_blank">
+                <img class="project-img" src="ProductPage.PNG" alt="Product Landing preview image.">
+            Product Landing</a>
+        </div>
+        <div class="project-tile">
+            <a href="http://kalevnakah.me/FCC-Projects/SurveyForm/" target="_blank">
+                <img class="project-img" src="SurveyForm.PNG" alt="Survey Form preview image.">
+            Survey Form</a>
+        </div>
+        <div class="project-tile">
+            <a href="http://kalevnakah.me/FCC-Projects/TechnicalDocumentation/" target="_blank">
+                <img class="project-img" src="Tribute.PNG" alt="Tribute preview image.">
+            Tribute</a>
+        </div>
+        <div class="project-tile"> 
+            <a href="http://Loft180.com" target="_blank">
+                <img class="project-img" src="Loft180.PNG" alt="Word Press preview image.">
+                Word Press</a>
+        </div>
+        <div class="project-tile">
+            <a href="http://campgracemn.org" target="_blank">
+                <img class="project-img" src="CampGrace.PNG" alt="Word Press preview image.">
+            Drupal</a>
         </div>
     </section>
-    <a id="profile-link" href="https://github.com/kalevnakah" target="_blank">Git Hub</a>
-    <a href="https://www.freecodecamp.org/kalevnakah" target="_blank">freeCodeCamp</a>
-  </body>
+    <section id="profile-section">
+        <a id="profile-link" href="https://github.com/kalevnakah" target="_blank">Git Hub</a>
+        <a href="https://www.freecodecamp.org/kalevnakah" target="_blank" target="_blank">freeCodeCamp</a>
+    </section>
+</body>
+
 </html>
