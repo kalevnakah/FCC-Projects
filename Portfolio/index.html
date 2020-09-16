@@ -6,17 +6,43 @@
     <title>Kalev Nakah</title>
     <meta name="description"
         content="Free Code Camp Responsive Web Design Projects - Build a Personal Portfolio Webpage by Caleb Schmidt.">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
     <style>
+        /* Custom properties/variables  */
+        :root {
+            --pink: #e667ff;
+            --dark-pink: #e000e7;
+            --blue: #1A09B6;
+            --light-blue: #A085F9;
+            --purple: #4E117A;
+            --dark-purple: #140023;
+        }
+        * {
+        margin: 0;
+        padding: 0;
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
         body,
         html {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
-            background-color: seagreen;
+            background-color: black;
+            scroll-behavior: smooth;
+            font-family: 'Press Start 2P', cursive;
         }
         a {
             text-decoration: none;
-            color: honeydew;
+            color: var(--pink);
+        }
+        #logo {
+            display: flex;
+            position: relative;
+            justify-content: flex-start;
+            height: 75px;
         }
         #navbar {
             display: flex;
@@ -24,7 +50,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: darkolivegreen;
+            background-color: var(--dark-purple);
             border-bottom: 2px solid black;
             z-index: 9;
         }
@@ -47,18 +73,19 @@
             align-items: center;
             height: 100vh;
             width: 100%;
-            background-color: crimson;
+            background-color: var(--purple);
+            font-family: 'Sriracha', cursive;
         }
         #welcome-section p {
-            font-size: 3rem;
-            font-weight: 200;
-            font-style: italic;
-            color:white;
+            color: white;
+        }
+        #welcome-name {
+            color:white
         }
         #projects {
             display: block;
             position:static;
-            background-color: rebeccapurple;
+            background-color: var(--light-blue);
             padding: 1em;
             text-align: center;
         }
@@ -71,26 +98,25 @@
             width: 100%;
             max-width: 1280px;
             margin: 0 auto;
-            background-color: blanchedalmond;
             justify-items: center;
         }
         .project-tile {
-            width: 393.75px;
-            background-color: black;
+            width: 300px;
+            background-color: var(--purple);
             margin: 1em;
         }
         .project-tile p {
+            padding: 1em;
         }
         .project-img {
             display:block;
-            height: 300px;
+            width: 300px;
         }
         #profile-section {
             display: flex;
             justify-content: center;
             padding: 8px;
-            background-color: crimson;
-            border: 4px dashed greenyellow;
+            background-color: var(--blue);
         }
         #profile-section a{
             margin: 1rem;
@@ -108,16 +134,31 @@
 <body>
     <script src="../bundle.js"></script>
     <navbar id="navbar">
+        <img id="logo" src="labrathorv3.png" alt="Logo - Labrathor">
         <ul class="nav-list">
             <li><a href="#welcome-section">About</a></li>
-            <li><a href="#projects-title">Projects</a></li>
-            <li><a href="#profile-section">Contact</a></li>
+            <li><a href="#projects-title">Work</a></li>
+            <li><a href="#profile-section">Profile</a></li>
         </ul>
     </navbar>
     <section id="welcome-section">
         <h1>Hey I am Caleb</h1>
-        <p>a web developer</p>
-    </section>
+        <p>a software engineer</p>
+        </br>
+        <pre id="welcome-name">
+                                Kalev Nakah = Caleb Schmidt
+
+                            Caleb                         | Schmidt
+                 English = faithful                       | blacksmith
+            Biblical Hebrew = נכה |                          כלב
+                            Kal-lev                       | Nakah
+                           all |          heart           | smite
+                 to make whole |     heart after God      | to cripple/kill
+                whole heartily | to live for Jesus Christ | killed everyday
+
+        KalevNakah.me = Whole heartily dying to my self everyday to live for Jesus Christ.
+        </pre>
+        </section>
     <section id="projects">
         <h2 id="projects-title">These are some of my projects</h2></br>
         <div class="projects-grid">
