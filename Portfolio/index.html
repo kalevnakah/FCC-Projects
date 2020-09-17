@@ -9,6 +9,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
     <style>
+        /* box-sizing and font sizing */
+        *,
+        *::before,
+        *::after {
+        box-sizing: inherit;
+        }
+
+        html {
+        box-sizing: border-box;
+
+        /* Set font size for easy rem calculations
+        * default document font size = 16px, 1rem = 16px, 100% = 16px
+        * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+        */
+        font-size: 62.5%;
+        scroll-behavior: smooth;
+        }
+
+        /* A few media query to set some font sizes at different screen sizes.
+        * This helps automate a bit of responsiveness.
+        * The trick is to use the rem unit for size values, margin and padding.
+        * Because rem is relative to the document font size
+        * when we scale up or down the font size on the document
+        * it will affect all properties using rem units for the values.
+        */
+
+        /* I am using the em unit for breakpoints
+        * The calculation is the following
+        * screen size divided by browser base font size
+        * As an example: a breakpoint at 980px
+        * 980px / 16px = 61.25em
+        */
+
+        /* 1200px / 16px = 75em */
+        @media (max-width: 75em) {
+            html {
+                font-size: 60%;
+            }
+        }
+
+        /* 980px / 16px = 61.25em */
+        @media (max-width: 61.25em) {
+            html {
+                font-size: 58%;
+            }
+        }
+
+        /* 460px / 16px = 28.75em */
+        @media (max-width: 28.75em) {
+            html {
+                font-size: 55%;
+            }
+        }
+
+        /* Base styles */
+
+        body {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 1.8rem; /* 18px */
+        font-weight: 400;
+        line-height: 1.4;
+        color: var(--main-white);
+        background-color: black;
+        scroll-behavior: smooth;
+        }
         /* Custom properties/variables  */
         :root {
             --pink: #e667ff;
@@ -27,27 +92,18 @@
         *::after {
             box-sizing: inherit;
         }
-        body,
-        html {
-            box-sizing: border-box;
-            background-color: black;
-            scroll-behavior: smooth;
-            font-family: 'Press Start 2P', cursive;
-        }
+
         a {
             text-decoration: none;
             color: var(--pink);
         }
-        #logo {
-            display: flex;
-            position: relative;
-            justify-content: flex-start;
-            height: 75px;
+        section {
+            display: block;
         }
         #navbar {
             display: flex;
-            justify-content: flex-end;
             position: fixed;
+            justify-content: space-between;
             top: 0;
             width: 100%;
             background-color: var(--dark-purple);
@@ -58,13 +114,18 @@
             display: flex;
             list-style: none;
         }
+        #logo {
+            display: flex;
+            position: relative;
+            height: 75px;
+        }
         .nav-list {
             margin: 0 1rem;
         }
         .nav-list a {
             display: block;
-            padding: 2rem;
-            font-size: 2.2rem;
+            padding: 1rem;
+            font-size: 1.5rem;
         }
         #welcome-section {
             display: flex;
@@ -83,14 +144,12 @@
             color:white
         }
         #projects {
-            display: block;
-            position:static;
             background-color: var(--light-blue);
-            padding: 1em;
             text-align: center;
+            padding: 10rem 2rem;
         }
         #projects-title {
-        }
+        } 
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(393.75px, 1fr));
@@ -137,7 +196,7 @@
         <img id="logo" src="labrathorv3.png" alt="Logo - Labrathor">
         <ul class="nav-list">
             <li><a href="#welcome-section">About</a></li>
-            <li><a href="#projects-title">Work</a></li>
+            <li><a href="#projects">Work</a></li>
             <li><a href="#profile-section">Profile</a></li>
         </ul>
     </navbar>
