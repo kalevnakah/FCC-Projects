@@ -68,7 +68,7 @@
         body {
         font-family: 'Press Start 2P', cursive;
         font-size: 1.8rem; /* 18px */
-        font-weight: 400;
+        font-weight: 350;
         line-height: 1.4;
         color: var(--main-white);
         background-color: black;
@@ -97,6 +97,23 @@
             text-decoration: none;
             color: var(--pink);
         }
+        a:hover {
+            background-color: var(--blue);
+            color:var(--dark-pink)
+        }
+        h1 {
+            font-size: 8rem;
+            font-weight: normal;
+            padding: 2rem;
+            color: whitesmoke;
+        }
+        h2 {
+            font-size: 4rem;
+            font-weight: normal;
+            margin: 1rem;
+            padding: 1rem;
+            font-family: 'Sriracha', cursive;
+        }
         section {
             display: block;
         }
@@ -118,14 +135,18 @@
             display: flex;
             position: relative;
             height: 75px;
+            margin: 1rem 5rem;
         }
         .nav-list {
             margin: 0 1rem;
         }
         .nav-list a {
-            display: block;
-            padding: 1rem;
-            font-size: 1.5rem;
+            display: flex;
+            padding: 1rem 2rem;
+            font-size: 2.4rem;
+            height: 100%;
+            line-height: 100%;
+            align-items: center;
         }
         #welcome-section {
             display: flex;
@@ -136,12 +157,19 @@
             width: 100%;
             background-color: var(--purple);
             font-family: 'Sriracha', cursive;
+            text-align: center;
         }
         #welcome-section p {
             color: white;
+            font-size: 4rem;
+            font-weight: normal;
+            text-decoration: underline wavy var(--dark-pink);
         }
         #welcome-name {
-            color:white
+            color:white;
+            text-align: start;
+            margin: 1rem;
+            padding: 1rem;
         }
         #projects {
             background-color: var(--light-blue);
@@ -161,11 +189,16 @@
         }
         .project-tile {
             width: 300px;
-            background-color: var(--purple);
             margin: 1em;
+            background-color: var(--purple);
+            box-shadow: 10px 10px 0 0 var(--dark-pink);
+        }
+        .project-tile:hover {
+            background-color: var(--blue);
+            transition: background .5s ease-out;
         }
         .project-tile p {
-            padding: 1em;
+            padding: 2rem;
         }
         .project-img {
             display:block;
@@ -201,25 +234,25 @@
         </ul>
     </navbar>
     <section id="welcome-section">
-        <h1>Hey I am Caleb</h1>
+        <h1>Oi, I am Caleb</h1>
         <p>a software engineer</p>
         </br>
         <pre id="welcome-name">
                                 Kalev Nakah = Caleb Schmidt
 
-                            Caleb                         | Schmidt
-                 English = faithful                       | blacksmith
-            Biblical Hebrew = נכה |                          כלב
-                            Kal-lev                       | Nakah
-                           all |          heart           | smite
-                 to make whole |     heart after God      | to cripple/kill
-                whole heartily | to live for Jesus Christ | killed everyday
+                            Caleb                        | Schmidt
+                 English = faithful                      | blacksmith
+           Biblical Hebrew = נכה |                          כלב
+                           Kal-lev                       | Nakah
+                          all |          heart           | smite
+                to make whole |     heart after God      | to cripple/kill
+               whole heartily | to live for Jesus Christ | killed everyday
 
-        KalevNakah.me = Whole heartily dying to my self everyday to live for Jesus Christ.
+    KalevNakah.me = Whole heartily dying to my self everyday to live for Jesus Christ.
         </pre>
         </section>
     <section id="projects">
-        <h2 id="projects-title">These are some of my projects</h2></br>
+        <h2 id="projects-title">Here is a taste of some of my handy work.</h2></br>
         <div class="projects-grid">
             <div class="project-tile">
                 <a href="http://kalevnakah.me/FCC-Projects/TechnicalDocumentation/" target="_blank">
