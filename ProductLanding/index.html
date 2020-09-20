@@ -30,11 +30,10 @@
         min-width: 180px;
       }
       h1 {
-        margin-left: 1em;
+        margin: 0 1.5rem 0 1.5rem;
         align-self: center;
       }
       main h1{
-        margin: 0 1.5rem 0 1.5rem;
         padding: none;
         align-self: center;
       }
@@ -47,7 +46,7 @@
         Width: 100%;
         text-align: center;
         font-size: 1.25em;
-        margin: 1em 0 1em 0;
+        margin: 0 0 1em 0;
       }
       input, label {
         margin:10px;
@@ -59,16 +58,24 @@
         background-color: crimson;
       }
       a:link {
-        color: whitesmoke;
+        color: black;
       }
       a:visited a:active{
-        color: grey;
+        color: crimson;
+      }
+      a.anchor {
+        display: block;
+        position: relative;
+        top: -150px;
+        visibility: hidden;
       }
       #nav-bar {
         float: right;
         top: 0;
         align-self: center;
-        margin-left: 25px;
+      }
+      #benefits{
+        padding: 0 2rem 0 2rem;
       }
       #video {
         width: 640px;
@@ -78,7 +85,7 @@
       #price {
         display: inline-flex;
         top: 0;
-        margin: 0 10% 0 10% 0;
+        margin: 5% 10% 10% 10%;
         min-width: 180px;
         justify-content: center;
         align-items: stretch;
@@ -138,37 +145,42 @@
             Length="150px">
         <h1>Join The Winning Team!</h1>
         <nav id="nav-bar">
-          <a class="nav-link" href="#form">Benefits</a>
-          <a class="nav-link" href="#video">Video</a>
-          <a class="nav-link" href="#price">Price</a>
+          <a class="nav-link" href="#aform">Benefits</a>
+          <a class="nav-link" href="#avideo">Video</a>
+          <a class="nav-link" href="#aprice">Price</a>
         </nav>  
     </header>
     <main name="main">
+      <a class="anchor" id="aform"></a>
       <form id="form" action="https://www.freecodecamp.com/email-submit">
         <label for="email">Get the winning playbook.</label></br>
         <input id="email" type="email" placeholder="example@domain.com" name="email"></br>
         <input class="button" id="submit" type="submit"></input>
       </form>
-      <h1>New Life</h1>
-      <p>Become born again. Hit the reset button and start living a life full and abundant. 
-        'Jesus answered, “Truly, truly, I say to you, unless one is born of water and the Spirit, 
-        he cannot enter the kingdom of God.' - John 3:5</p>
+      <div id="benefits">
+        <h1>New Life</h1>
+        <p>Become born again. Hit the reset button and start living a life full and abundant. 
+          'Jesus answered, “Truly, truly, I say to you, unless one is born of water and the Spirit, 
+          he cannot enter the kingdom of God.' - John 3:5</p>
+          <hr>
+        <h1>Transormed Mind</h1>
+        <p>See the world through new lens. Learn to think about what your thinking about. Change your reality.</br>
+          "Do not conform to the pattern of this world, but be transformed by the renewing of your mind. 
+          Then you will be able to test and approve what God's will is--his good, pleasing and perfect will." - Romans 12:2
+        </p>
         <hr>
-      <h1>Transormed Mind</h1>
-      <p>See the world through new lens. Learn to think about what your thinking about. Change your reality.</br>
-        "Do not conform to the pattern of this world, but be transformed by the renewing of your mind. 
-        Then you will be able to test and approve what God's will is--his good, pleasing and perfect will." - Romans 12:2
-      </p>
-      <hr>
-      <h1>Loving Community</h1>
-      <p>Become apart of the family of God. You will never be alone you have the common bond of Jesus' blood.
-        "Yet to all who did receive him, to those who believed in his name, he gave the right to become children of God." - John 1:12
-      </p>
+        <h1>Loving Community</h1>
+        <p>Become apart of the family of God. You will never be alone you have the common bond of Jesus' blood.
+          "Yet to all who did receive him, to those who believed in his name, he gave the right to become children of God." - John 1:12
+        </p>
+      </div>
+      <a class="anchor" id="avideo"></a>
       <iframe id=video
         src="https://www.youtube.com/embed/cmIUuhhV92g" frameborder="0" 
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen></iframe>
       </br>
+      <a class="anchor" id="aprice"></a>
       <div id="price">
         <div class="price">
           <div id="pricetitle">Student</div>
