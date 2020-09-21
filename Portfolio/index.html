@@ -8,6 +8,7 @@
         content="Free Code Camp Responsive Web Design Projects - Build a Personal Portfolio Webpage by Caleb Schmidt.">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <style>
         /* box-sizing and font sizing */
         *,
@@ -92,6 +93,12 @@
         *::after {
             box-sizing: inherit;
         }
+        ::before:target {
+            display: block;
+            position: relative;
+            top: 10rem; 
+            visibility: hidden;
+        }   
 
         a {
             text-decoration: none;
@@ -110,9 +117,18 @@
         h2 {
             font-size: 4rem;
             font-weight: normal;
-            margin: 1rem;
-            padding: 1rem;
+            padding: 4rem;
             font-family: 'Sriracha', cursive;
+        }
+        p {
+            font-size: 2rem;
+        }
+        q {
+            display:inline-block;
+            font-family: 'Playfair Display', serif;
+            text-indent: -10rem;
+            text-align: left;
+            padding: 1rem 10rem 1rem 20rem;
         }
         section {
             display: block;
@@ -148,6 +164,12 @@
             line-height: 100%;
             align-items: center;
         }
+        a.anchor {
+            display: block;
+            position: relative;
+            top: -10rem;
+            visibility: hidden;
+        }    
         #welcome-section {
             display: flex;
             flex-direction: column;
@@ -168,13 +190,13 @@
         #welcome-name {
             color:white;
             text-align: start;
+            font-size: 1.9rem;
             margin: 1rem;
             padding: 1rem;
         }
         #projects {
             background-color: var(--light-blue);
             text-align: center;
-            padding: 10rem 2rem;
         }
         .projects-grid {
             display: grid;
@@ -203,7 +225,6 @@
             width: 300px;
         }
         #profile-section {
-            padding: 8px;
             background-color: var(--blue);
             display: flex;
             flex-direction: column;
@@ -217,11 +238,11 @@
             color: whitesmoke;
         }
         #profile-links {
-            padding: 3rem 1rem 3rem 1rem;            
+            padding: 0 1rem 3rem 1rem;            
         }
         #profile-section a{
-            margin: 1rem;
-            padding: 1rem;
+            margin: 0 1rem;
+            padding: 1rem 1rem;
             display: inline-block;
         }
         .profile-btn:hover {
@@ -243,8 +264,8 @@
         <img id="logo" src="labrathorv3.png" alt="Logo - Labrathor">
         <ul class="nav-list">
             <li><a href="#welcome-section">About</a></li>
-            <li><a href="#projects">Work</a></li>
-            <li><a href="#profile-section">Profile</a></li>
+            <li><a href="#projects-section">Work</a></li>
+            <li><a href="#profile">Profile</a></li>
         </ul>
     </navbar>
     <section id="welcome-section">
@@ -266,6 +287,7 @@
         </pre>
         </section>
     <section id="projects">
+        <a id="projects-section" class="anchor"></a>
         <h2 id="projects-title">Here is a taste of some of my handy work.</h2></br>
         <div class="projects-grid">
             <div class="project-tile">
@@ -301,10 +323,12 @@
         </div>
     </section>
     <section id="profile-section">
+        <a id=profile class="anchor"></a>
         <div id="profile-title">
             <h2>I may seem a bit sketchy...</h2>
             <p>but give me a moment of your time and you will discover the color in me.</p>
-            <quote>[sketch] 1: a simply or hastily executed drawing or painting, especially a preliminary one, giving the essential features without the details. - Dictionary.com</quote>
+            <q>[sketch] 1: a simply or hastily executed drawing or painting, especially a preliminary one, 
+                giving the essential features without the details. ~ Dictionary.com</q>
         </div>
         <div id="profile-links">
             <a class="profile-btn" 
