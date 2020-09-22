@@ -6,6 +6,8 @@
     <title>Kalev Nakah</title>
     <meta name="description"
         content="Free Code Camp Responsive Web Design Projects - Build a Personal Portfolio Webpage by Caleb Schmidt.">
+    <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
@@ -28,52 +30,15 @@
         scroll-behavior: smooth;
         }
 
-        /* A few media query to set some font sizes at different screen sizes.
-        * This helps automate a bit of responsiveness.
-        * The trick is to use the rem unit for size values, margin and padding.
-        * Because rem is relative to the document font size
-        * when we scale up or down the font size on the document
-        * it will affect all properties using rem units for the values.
-        */
-
-        /* I am using the em unit for breakpoints
-        * The calculation is the following
-        * screen size divided by browser base font size
-        * As an example: a breakpoint at 980px
-        * 980px / 16px = 61.25em
-        */
-
-        /* 1200px / 16px = 75em */
-        @media (max-width: 75em) {
-            html {
-                font-size: 60%;
-            }
-        }
-
-        /* 980px / 16px = 61.25em */
-        @media (max-width: 61.25em) {
-            html {
-                font-size: 58%;
-            }
-        }
-
-        /* 460px / 16px = 28.75em */
-        @media (max-width: 28.75em) {
-            html {
-                font-size: 55%;
-            }
-        }
-
         /* Base styles */
-
         body {
-        font-family: 'Press Start 2P', cursive;
-        font-size: 1.8rem; /* 18px */
-        font-weight: 350;
-        line-height: 1.4;
-        color: var(--main-white);
-        background-color: black;
-        scroll-behavior: smooth;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.8rem; /* 18px */
+            font-weight: 350;
+            line-height: 1.4;
+            color: var(--main-white);
+            scroll-behavior: smooth;
+            background-color: black;
         }
         /* Custom properties/variables  */
         :root {
@@ -92,14 +57,7 @@
         *::before,
         *::after {
             box-sizing: inherit;
-        }
-        ::before:target {
-            display: block;
-            position: relative;
-            top: 10rem; 
-            visibility: hidden;
-        }   
-
+        }  
         a {
             text-decoration: none;
             color: var(--pink);
@@ -143,26 +101,25 @@
             box-shadow: 0 6px 6px 0px var(--dark-pink);
             z-index: 9;
         }
-        #navbar ul {
-            display: flex;
-            list-style: none;
-        }
         #logo {
             display: flex;
             position: relative;
-            height: 75px;
-            margin: 1.5rem 5rem;
+            height: 150px;
+            min-height: 30px;
+            max-height: 150px;
+            margin: auto 1.5rem auto 5rem;
         }
         .nav-list {
-            margin: 0 1rem;
+            display: flex;
+            flex-flow: row-reverse wrap-reverse;
+            list-style: none;
+            justify-content: right;
         }
         .nav-list a {
-            display: flex;
-            padding: 1rem 2rem;
+            display: inline-block;
             font-size: 2.4rem;
-            height: 100%;
-            line-height: 100%;
-            align-items: center;
+            margin: 0 1rem;
+            padding: 1rem 1rem;
         }
         a.anchor {
             display: block;
@@ -175,6 +132,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 2em;
             height: 100vh;
             width: 100%;
             background-color: var(--purple);
@@ -190,13 +148,14 @@
         #welcome-name {
             color:white;
             text-align: start;
-            font-size: 1.9rem;
             margin: 1rem;
             padding: 1rem;
+            font-size: 1.8vw;
         }
         #projects {
             background-color: var(--light-blue);
             text-align: center;
+            padding: 1em;
         }
         .projects-grid {
             display: grid;
@@ -230,6 +189,7 @@
             flex-direction: column;
             text-justify: middle;
             text-align: center;
+            padding: 1.5rem;
         }
         #profile-title {
             font-family: 'Sriracha', cursive;
@@ -249,11 +209,71 @@
             background-color: yellow;
             transform: rotate(0.5turn);
         }
+                /* A few media query to set some font sizes at different screen sizes.
+        * This helps automate a bit of responsiveness.
+        * The trick is to use the rem unit for size values, margin and padding.
+        * Because rem is relative to the document font size
+        * when we scale up or down the font size on the document
+        * it will affect all properties using rem units for the values.
+        */
 
-        @media screen and (max-width: 750px) {
-            body,
+        /* I am using the em unit for breakpoints
+        * The calculation is the following
+        * screen size divided by browser base font size
+        * As an example: a breakpoint at 980px
+        * 980px / 16px = 61.25em
+        */
+
+        /* 3840px / 16px = 240em */
+        @media screen and (max-width: 240em){
             html {
-                background-color: black;
+                font-size: 60%;
+            }
+            #logo {
+                height: 45px;
+            }
+            #navbar {
+                height: 50px
+            }
+            a.anchor {
+                top: -50px;
+            }
+            #welcome-section {
+                padding-top: 6em ;
+            }
+        }
+        /* 980px / 16px = 61.25em */
+        @media screen and (max-width: 61.25em) {
+            html {
+                font-size: 58%;
+            }
+            q {
+                text-indent: 0;
+                padding: 1rem 1rem 1rem 1rem;
+            }
+            #logo {
+                height: 90px;
+            }
+            #navbar {
+                height: 100px
+            }
+            a.anchor {
+                top: -100px;
+            }
+        }
+        /* 460px / 16px = 28.75em */
+        @media screen and (max-width: 28.75em) {
+            html {
+                font-size: 55%;
+            }
+            #logo {
+                height: 140px;
+            }
+            #navbar {
+                height: 150px
+            }
+            a.anchor {
+                top: -150px;
             }
         }
     </style>
@@ -263,9 +283,9 @@
     <navbar id="navbar">
         <img id="logo" src="labrathorv3.png" alt="Logo - Labrathor">
         <ul class="nav-list">
-            <li><a href="#welcome-section">About</a></li>
-            <li><a href="#projects-section">Work</a></li>
             <li><a href="#profile">Profile</a></li>
+            <li><a href="#projects-section">Work</a></li>
+            <li><a href="#welcome-section">About</a></li>
         </ul>
     </navbar>
     <section id="welcome-section">
