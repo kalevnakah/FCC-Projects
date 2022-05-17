@@ -1,146 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Kalev Nakah - FCC Survey Form</title>
-    <meta name="description" content="Free Code Camp Responsive Web Design Projects - Build a Survey Form by Caleb Schmidt.">
-    <link rel="stylesheet" type="text/css" href="SurveyForm.css">
+    <meta
+      name="description"
+      content="Free Code Camp Responsive Web Design Projects - Build a Survey Form by Caleb Schmidt."
+    />
+    <link rel="stylesheet" type="text/css" href="SurveyForm.css" />
   </head>
   <body>
     <script src="../bundle.js"></script>
-      <header>
-        <h1 id="title">KalevNakah.me Survey Form</h1>
-        <p id="description">Thank you for taking the time to critique my work</p>
-      </header>
-        <form id="survey-form">
-            <div class="form-group">
-                <label id="name-label" for="name">Name</label>
-                <input 
-                    id="name" 
-                    type="text" 
-                    placeholder="Enter Your Name" 
-                    class="form-control" 
-                    required>
-            </div>
-            <div class="form-group">
-                <label id="email-label" for="email">email</label>
-                <input 
-                    id="email" 
-                    type="email" 
-                    placeholder="example@domain.com" 
-                    class="form-control"
-                    required>
-            </div>
-            <div class="form-group">
-                <label id="number-label" for="number" >Age (optional)</label>
-                <input
-                    id="number" 
-                    type="number" 
-                    placeholder=42 
-                    min=1 max=120
-                    class="form-control">
-            </div>
-            <div class="form-group">
-                <label id="dropdown-label" for="dropdown">Who are you?</label>
-                <select id="dropdown" name="role" class="form-control" required>
-                    <option value="" disabled selected>Choose a title.</option>
-                    <option value="hire">Hiring Manger</option>
-                    <option value="boss">CEO</option>
-                    <option value="chief">CTO</option>
-                    <option value="manager">Manager</option>
-                    <option value="employee">Employee</option>
-                    <option value="friend">Friend</option>
-                    <option value="browser">Just passing by</option>
-                </select>
-            </div>
-            <div class="form-group"> 
-                <label id="score-label" for="score">What do you think of my portfolio?</label>
-                <label><input 
-                    type="radio" 
-                    name="score" 
-                    value="Amazing"
-                    class="input-radio"
-                    />Amazing!</label>
-                <label><input 
-                    type="radio" 
-                    name="score" 
-                    value="Fabulous"
-                    class="input-radio"
-                    />Fabulous!</label>
-                <label><input 
-                    type="radio" 
-                    name="score" 
-                    value="Meh"
-                    class="input-radio"
-                    />Meh</label>
-                <label><input 
-                    type="radio" 
-                    name="score" 
-                    value="improve"
-                    class="input-radio"
-                    />Needs Improvement</label>
-                <label><input 
-                    type="radio" 
-                    name="score" 
-                    value="NC"
-                    class="input-radio"
-                    />No Comment!</label>
-            </div>
-            <div class="form-group">
-                <label id="improve-label" for="improve">What could use improving?</label>
-                <label><input 
-                    type="checkbox" 
-                    name="improve" 
-                    value="Design"
-                    class="input-checkbox">
-                    Design</label>
-                <label><input 
-                    type="checkbox" 
-                    name="improve" 
-                    value="Code"
-                    class="input-checkbox">
-                    Code</label>
-                <label><input 
-                    type="checkbox" 
-                    name="improve" 
-                    value="Accessibility"
-                    class="input-checkbox">
-                    Accessibility</label>
-                <label><input 
-                    type="checkbox" 
-                    name="improve" 
-                    value="Responsiveness"
-                    class="input-checkbox" >
-                    Responsiveness</label>
-                <label><input 
-                    type="checkbox" 
-                    name="improve" 
-                    value="content"
-                    class="input-checkbox">
-                    Content</label>
-                <label><input 
-                    type="checkbox" 
-                    name="improve" 
-                    value="documentation"
-                    class="input-checkbox">
-                    Documentation</label>
-            </div>
-            <div class="form-group">
-                <label id="comments-label" for="comments">Any constructive criticism?</label>
-                <textarea 
-                    id="comments"
-                    class="input-textarea form-control"
-                    placeholder="Penny for your thoughts?"></textarea>
-                    </div>
-            <div class="form-group">
-                <input
-                    id="submit" 
-                    type="submit"
-                    class="form-control">
-            </div>
-        </form>
-      <footer>
-
-      </footer>
+    <header>
+      <h1 id="title">KalevNakah.me Survey Form</h1>
+      <p id="description">Thank you for taking the time to critique my work</p>
+    </header>
+    <form id="survey-form" action="https://submit-form.com/1e7MbuPH">
+      <div class="form-group">
+        <label id="name-label" for="name">Name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Enter Your Name"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label id="email-label" for="email">email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="example@domain.com"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label id="number-label" for="number">Age (optional)</label>
+        <input
+          id="number"
+          name="age"
+          type="number"
+          placeholder="42"
+          min="1"
+          max="120"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label id="dropdown-label" for="dropdown">Who are you?</label>
+        <select id="dropdown" name="role" class="form-control" required>
+          <option value="" disabled selected>Choose a title.</option>
+          <option value="hire">Hiring Manger</option>
+          <option value="boss">CEO</option>
+          <option value="chief">CTO</option>
+          <option value="manager">Manager</option>
+          <option value="employee">Employee</option>
+          <option value="friend">Friend</option>
+          <option value="browser">Just passing by</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label id="score-label" for="score"
+          >What do you think of my portfolio?</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="score"
+            value="Amazing"
+            class="input-radio"
+          />Amazing!</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="score"
+            value="Fabulous"
+            class="input-radio"
+          />Fabulous!</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="score"
+            value="Meh"
+            class="input-radio"
+          />Meh</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="score"
+            value="improve"
+            class="input-radio"
+          />Needs Improvement</label
+        >
+        <label
+          ><input type="radio" name="score" value="NC" class="input-radio" />No
+          Comment!</label
+        >
+      </div>
+      <div class="form-group">
+        <label id="improve-label" for="improve"
+          >What could use improving?</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            name="improve"
+            value="Design"
+            class="input-checkbox"
+          />
+          Design</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            name="improve"
+            value="Code"
+            class="input-checkbox"
+          />
+          Code</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            name="improve"
+            value="Accessibility"
+            class="input-checkbox"
+          />
+          Accessibility</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            name="improve"
+            value="Responsiveness"
+            class="input-checkbox"
+          />
+          Responsiveness</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            name="improve"
+            value="content"
+            class="input-checkbox"
+          />
+          Content</label
+        >
+        <label
+          ><input
+            type="checkbox"
+            name="improve"
+            value="documentation"
+            class="input-checkbox"
+          />
+          Documentation</label
+        >
+      </div>
+      <div class="form-group">
+        <label id="comments-label" for="comments"
+          >Any constructive criticism?</label
+        >
+        <textarea
+          id="comments"
+          name="Comments"
+          class="input-textarea form-control"
+          placeholder="Penny for your thoughts?"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <input id="submit" type="submit" class="form-control" />
+      </div>
+    </form>
+    <footer></footer>
   </body>
 </html>
