@@ -4,15 +4,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class Buttons extends Component {
   render() {
+    const { quote, author, color } = this.props;
     return (
       <div>
         <a id="tweet-quote" href="twitter.com/intent/tweet">
-          <FontAwesomeIcon icon="fab fa-twitter-square" />
+          <FontAwesomeIcon
+            icon="fab fa-twitter-square"
+            className={`color-${color}`}
+          />
         </a>
         <a id="tumbler-quote" href="twitter.com/intent/tweet">
-          <FontAwesomeIcon icon="fab fa-tumblr-square" />
+          <FontAwesomeIcon
+            icon="fab fa-tumblr-square"
+            className={`color-${color}`}
+          />
         </a>
-        <Button id="new-quote">New Quote</Button>
+        <Button
+          id="new-quote"
+          className={`bg-color-${color}`}
+          style={{ border: 'none' }}
+        >
+          New Quote
+        </Button>
       </div>
     );
   }
