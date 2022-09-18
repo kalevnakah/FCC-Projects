@@ -7,13 +7,21 @@ export default class Buttons extends Component {
     const { quote, author, color, getRandomQuote } = this.props;
     return (
       <div>
-        <a id="tweet-quote" href="twitter.com/intent/tweet">
+        <a
+          id="tweet-quote"
+          href={`https://twitter.com/intent/tweet?text=${quote} Author - ${author}`}
+          target="_blank"
+        >
           <FontAwesomeIcon
             icon="fab fa-twitter-square"
             className={`color-${color}`}
           />
         </a>
-        <a id="tumbler-quote" href="twitter.com/intent/tweet">
+        <a
+          id="tumbler-quote"
+          href={`https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,crosswalkcoder&caption=${author}&content= ${quote}&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button`}
+          target="_blank"
+        >
           <FontAwesomeIcon
             icon="fab fa-tumblr-square"
             className={`color-${color}`}
