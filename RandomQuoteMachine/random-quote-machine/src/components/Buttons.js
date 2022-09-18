@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class Buttons extends Component {
   render() {
-    const { quote, author, color } = this.props;
+    const { quote, author, color, getRandomQuote } = this.props;
     return (
       <div>
         <a id="tweet-quote" href="twitter.com/intent/tweet">
@@ -23,6 +23,9 @@ export default class Buttons extends Component {
           id="new-quote"
           className={`bg-color-${color}`}
           style={{ border: 'none' }}
+          onClick={() => {
+            getRandomQuote();
+          }}
         >
           New Quote
         </Button>

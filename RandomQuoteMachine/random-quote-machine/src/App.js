@@ -11,11 +11,13 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      color: 1,
+      color: 10,
       quotes: {},
       quote: 'Strive not to be a success, but rather to be of value.',
       author: 'Albert Einstein',
     };
+
+    this.getRandomQuote = this.getRandomQuote.bind(this);
   }
 
   // Fetch Tasks
@@ -25,6 +27,7 @@ export default class App extends Component {
     );
     const data = await res.json();
     this.setState({ quotes: { ...data.quotes } });
+    this.getRandomQuote();
   }
 
   getRandomQuote() {
@@ -39,7 +42,6 @@ export default class App extends Component {
 
   componentDidMount() {
     this.fetchTasks();
-    this.getRandomQuote();
   }
 
   render() {
@@ -47,9 +49,14 @@ export default class App extends Component {
     return (
       <div className={`App bg-color-${color}`}>
         <Container>
-          <h1 className="text-white">Hello World</h1>
+          <h1>Hello World</h1>
           <img src={logo} className="App-logo" alt="logo" />
-          <Quote quote={quote} author={author} color={color} />
+          <Quote
+            quote={quote}
+            author={author}
+            color={color}
+            getRandomQuote={this.getRandomQuote}
+          />
         </Container>
         <h6>by Crosswalk Coder</h6>
       </div>

@@ -3,7 +3,7 @@ import Buttons from '../components/Buttons';
 
 export default class Quote extends Component {
   render() {
-    const { quote, author, color } = this.props;
+    const { quote, author, color, getRandomQuote } = this.props;
     return (
       <div id="#quote-box" className="bg-white">
         <blockquote id="text" className={`blockquote color-${color}`}>
@@ -13,7 +13,12 @@ export default class Quote extends Component {
         <p id="author" className={`fs-6 text-end color-${color}`}>
           - {author}
         </p>
-        <Buttons quote={quote} author={author} color={color} />
+        <Buttons
+          quote={quote}
+          author={author}
+          color={color}
+          getRandomQuote={getRandomQuote}
+        />
       </div>
     );
   }
