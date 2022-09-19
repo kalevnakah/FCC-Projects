@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import { Container } from 'react-bootstrap';
 import Quote from './components/Quote';
@@ -37,7 +36,13 @@ export default class App extends Component {
       );
       const { quote, author } = this.state.quotes[randomIndex];
       this.setState({ quote: quote, author: author });
+      this.changeColor();
     }
+  }
+
+  changeColor() {
+    const colorIndex = Math.ceil(Math.random() * 10);
+    this.setState({ color: colorIndex });
   }
 
   componentDidMount() {
@@ -47,10 +52,8 @@ export default class App extends Component {
   render() {
     const { quote, author, color } = this.state;
     return (
-      <div className={`App bg-color-${color}`}>
-        <Container>
-          <h1>Hello World</h1>
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className={`App bg-color-${color} vh-100 `}>
+        <Container className={'p-5 w-auto'}>
           <Quote
             quote={quote}
             author={author}
