@@ -14,7 +14,7 @@ export default class Controller extends Component {
           id="toggle-check"
           type="checkbox"
           variant="outline-success"
-          checked={this.props.getPowerState()}
+          checked={this.props.power}
           value="1"
           onChange={(e) => this.props.togglePower(e.currentTarget.checked)}
         >
@@ -32,6 +32,7 @@ export default class Controller extends Component {
             className="slider"
             id="myRange"
             onChange={this.changeVolume}
+            disabled={!this.props.power}
           />
         </div>
       </div>
