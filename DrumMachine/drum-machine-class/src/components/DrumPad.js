@@ -55,18 +55,16 @@ export default class DrumPad extends Component {
 
   render() {
     return (
-      <Col xs="4">
-        <Button
-          className="drum-pad bg-black m-2"
-          size="lg"
-          onClick={this.btnClick}
-          id={'b' + this.id}
-          disabled={!this.props.power}
-        >
-          <h1 id={'h' + this.id}>{this.id}</h1>
-          <audio className="clip" src={this.path} id={this.id}></audio>
-        </Button>
-      </Col>
+      <Button
+        className="drum-pad bg-black m-2"
+        size="lg"
+        onClick={this.btnClick}
+        id={'b' + this.id}
+        disabled={!this.props.power}
+      >
+        <h1 id={'h' + this.id}>{this.id}</h1>
+        <audio className="clip" src={this.path} id={this.id}></audio>
+      </Button>
     );
   }
 }

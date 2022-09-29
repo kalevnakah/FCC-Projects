@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Row } from 'react-bootstrap';
-import { Container, Stack } from 'react-bootstrap';
+import { Container, Stack, Col, Row } from 'react-bootstrap';
 import './App.scss';
 import Controller from './components/Controller';
 import DrumPad from './components/DrumPad';
@@ -41,22 +40,42 @@ export default class App extends Component {
   render() {
     const clips = document.querySelectorAll('.clip');
     clips.forEach((audio) => (audio.volume = this.state.volume / 100));
+    let i = 0;
+    const DrumPadLayout = this.state.drumset
+      .map((pad, i) => (
+        <Col xs="4" className="box" key={`col-${i}`}>
+          <DrumPad
+            key={pad.id}
+            pad={pad}
+            volume={this.state.volume}
+            setButtonPressed={this.setButtonPressed}
+            power={this.state.power}
+          />
+        </Col>
+      ))
+      .reduce((rows, col, index) => {
+        let currentRow;
+        if (index % 3 === 0) {
+          currentRow = [];
+          rows.push(currentRow);
+        } else {
+          currentRow = rows[rows.length - 1];
+        }
+        currentRow.push(col);
+        return rows;
+      }, [])
+      .map((cols, i) => (
+        <Row key={`row-${i}`} className="justify-content-xs-center">
+          {cols}
+        </Row>
+      ));
+
     return (
       <div className="App align-items-center text-center">
         <Stack gap="3">
           <h1>Drum Machine</h1>
           <Container className="bg-warning border border-dark">
-            <Row className="justify-content-xs-center">
-              {this.state.drumset.map((pad) => (
-                <DrumPad
-                  key={pad.id}
-                  pad={pad}
-                  volume={this.state.volume}
-                  setButtonPressed={this.setButtonPressed}
-                  power={this.state.power}
-                />
-              ))}
-            </Row>
+            {DrumPadLayout}
           </Container>
           <Controller
             pressed={this.state.pressed}
