@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ToggleButton from 'react-bootstrap/ToggleButton';
+import { ToggleButton, Stack } from 'react-bootstrap';
 
 export default class Controller extends Component {
   changeVolume = (e) => {
@@ -8,9 +8,9 @@ export default class Controller extends Component {
 
   render() {
     return (
-      <div>
+      <Stack gap={5} className="m-5">
         <ToggleButton
-          className="mb-2"
+          className="p-4 container"
           id="toggle-check"
           type="checkbox"
           variant="outline-success"
@@ -18,10 +18,14 @@ export default class Controller extends Component {
           value="1"
           onChange={(e) => this.props.togglePower(e.currentTarget.checked)}
         >
-          Power
+          <h1>Power</h1>
         </ToggleButton>
-        <div>
-          <h1>{this.props.pressed}</h1>
+        <div className="container">
+          <h1 className="p-3 pad-color">
+            {this.props.power && this.props.pressed
+              ? this.props.pressed
+              : 'Off'}
+          </h1>
         </div>
         <div className="slidecontainer">
           <input
@@ -29,13 +33,14 @@ export default class Controller extends Component {
             min="1"
             max="100"
             value={this.props.volume}
-            className="slider"
+            className="slider w-100"
             id="myRange"
             onChange={this.changeVolume}
             disabled={!this.props.power}
           />
+          <h3 className="text-color">Volume</h3>
         </div>
-      </div>
+      </Stack>
     );
   }
 }

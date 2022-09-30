@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Stack, Col, Row } from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 import './App.scss';
 import Controller from './components/Controller';
 import DrumPad from './components/DrumPad';
@@ -40,10 +40,9 @@ export default class App extends Component {
   render() {
     const clips = document.querySelectorAll('.clip');
     clips.forEach((audio) => (audio.volume = this.state.volume / 100));
-    let i = 0;
     const DrumPadLayout = this.state.drumset
       .map((pad, i) => (
-        <Col xs="4" className="box" key={`col-${i}`}>
+        <Col xs="4" key={`col-${i}`} className="p-1">
           <DrumPad
             key={pad.id}
             pad={pad}
@@ -65,26 +64,28 @@ export default class App extends Component {
         return rows;
       }, [])
       .map((cols, i) => (
-        <Row key={`row-${i}`} className="justify-content-xs-center">
+        <Row key={`row-${i}`} className="p-1">
           {cols}
         </Row>
       ));
 
     return (
       <div className="App align-items-center text-center">
-        <Stack gap="3">
-          <h1>Drum Machine</h1>
-          <Container className="bg-warning border border-dark">
-            {DrumPadLayout}
-          </Container>
-          <Controller
-            pressed={this.state.pressed}
-            volume={this.state.volume}
-            updateVolume={this.updateVolume}
-            togglePower={this.togglePower}
-            power={this.state.power}
-          />
-        </Stack>
+        <h1 className="p-5 text-color">Drum Machine</h1>
+        <Row>
+          <Col md="6">
+            <Container className="pad-color p-4">{DrumPadLayout}</Container>
+          </Col>
+          <Col md="6">
+            <Controller
+              pressed={this.state.pressed}
+              volume={this.state.volume}
+              updateVolume={this.updateVolume}
+              togglePower={this.togglePower}
+              power={this.state.power}
+            />
+          </Col>
+        </Row>
       </div>
     );
   }

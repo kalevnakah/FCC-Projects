@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Col } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 export default class DrumPad extends Component {
   constructor(props) {
@@ -24,8 +24,8 @@ export default class DrumPad extends Component {
 
   activate = () => {
     const btn = document.getElementById('b' + this.id);
-    btn.classList.replace('bg-black', 'bg-success');
-    setTimeout(() => btn.classList.replace('bg-success', 'bg-black'), 100);
+    btn.classList.replace('bg-black', 'bg-primary');
+    setTimeout(() => btn.classList.replace('bg-primary', 'bg-black'), 100);
   };
 
   updateButtonPressed = () => {
@@ -39,9 +39,10 @@ export default class DrumPad extends Component {
   };
 
   keyPress = (event) => {
-    if (event.keyCode === this.key) {
+    if (event.keyCode === this.key && this.props.power) {
       this.sound();
       this.activate();
+      this.updateButtonPressed();
     }
   };
 
@@ -56,7 +57,7 @@ export default class DrumPad extends Component {
   render() {
     return (
       <Button
-        className="drum-pad bg-black m-2"
+        className="bg-black rounded-4 w-100 h-100 p-4"
         size="lg"
         onClick={this.btnClick}
         id={'b' + this.id}

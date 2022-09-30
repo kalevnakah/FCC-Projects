@@ -1,12 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
 
 .App {
-  background-color: aqua;
+  background-color: black;
   height: 100vh;
 }
 
-.box {
-  display: flex;
-  flex: 0 0 auto;
-  width: auto;
+.container {
+  width: max-content;
+}
+
+.pad-color {
+  background-color: greenyellow;
+}
+
+.text-color {
+  color: greenyellow;
 }
