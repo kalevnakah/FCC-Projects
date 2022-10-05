@@ -7,19 +7,72 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      formula: '',
+      display: '42',
+      answer: '0',
     };
-    this.setFormula = this.setFormula.bind(this);
+    this.setDisplay = this.setDisplay.bind(this);
   }
 
-  setFormula = (){
-    this.setState({ formula: '1' });
+  setDisplay = (pushed) => {
+    const newString = this.state.display + pushed;
+    this.setState({ display: newString });
+  };
+
+  leadingZero = () => {};
+
+  clearDisplay = () => {
+    this.setState({ display: '0' });
+  };
+
+  calculate = () => {
+    let arr = [...this.state.display];
+    console.log(arr);
+  };
+
+  operation = (operator) => {
+    //get the last number or operator
+    const last = this.state.display.slice(-1);
+    console.log(last);
+    // check if last entered is "-" or "."
+    if (['-', '.'].includes(last)) {
+      console.log('-.');
+      // Check for duplicates
+      if (last !== operator) {
+        this.setDisplay(operator);
+      }
+    }
+    //check if last entered is +,/,x and ignore it if it is.
+    else if (!['+', 'x', '/'].includes(last)) {
+      this.setDisplay(operator);
+    }
   };
 
   render() {
+    const setDisplay = this.setDisplay;
+    const operation = this.operation;
     return (
       <div className="App">
-        <Push symbol={'1'} formula={this.setFormula}></Push>
+        <div id="display">
+          <h1>{this.state.display}</h1>
+          <h1>Answer</h1>
+        </div>
+        <Push symbol={'C'} calculate={this.clearDisplay}></Push>
+        <Push symbol={'0'} calculate={this.leadingZero}></Push>
+        <Push symbol={'1'} calculate={setDisplay}></Push>
+        <Push symbol={'2'} calculate={setDisplay}></Push>
+        <Push symbol={'3'} calculate={setDisplay}></Push>
+        <Push symbol={'4'} calculate={setDisplay}></Push>
+        <Push symbol={'5'} calculate={setDisplay}></Push>
+        <Push symbol={'6'} calculate={setDisplay}></Push>
+        <Push symbol={'7'} calculate={setDisplay}></Push>
+        <Push symbol={'8'} calculate={setDisplay}></Push>
+        <Push symbol={'9'} calculate={setDisplay}></Push>
+        <Push symbol={'.'} calculate={operation}></Push>
+        <Push symbol={'+'} calculate={operation}></Push>
+        <Push symbol={'-'} calculate={operation}></Push>
+        <Push symbol={'x'} calculate={operation}></Push>
+        <Push symbol={'/'} calculate={operation}></Push>
+        <Push symbol={'='} calculate={this.calculate}></Push>
       </div>
     );
   }
