@@ -25,8 +25,12 @@ export default class App extends Component {
   };
 
   calculate = () => {
-    let arr = [...this.state.display];
+    const re = '^([-+]? ?(d+|(g<1>))( ?[-+*/] ?g<1>)?)$';
+    let arr = this.state.display.split(re);
     console.log(arr);
+    // arr.map((arrItem) => {
+    //   Number(arrItem);
+    // });
   };
 
   operation = (operator) => {
