@@ -9,13 +9,21 @@ export default class App extends Component {
     this.state = {
       display: '42',
       answer: '0',
+      last: '',
     };
     this.setDisplay = this.setDisplay.bind(this);
+    this.removeLastFromDisplay = this.removeLastFromDisplay.bind(this);
   }
 
   setDisplay = (pushed) => {
     const newString = this.state.display + pushed;
-    this.setState({ display: newString });
+    this.setState({ display: newString, last: pushed });
+  };
+
+  removeLastFromDisplay = () => {
+    const minusOneString = this.state.display.slice(0, -1);
+    console.log(minusOneString);
+    this.setDisplay(minusOneString);
   };
 
   leadingZero = () => {};
@@ -25,7 +33,7 @@ export default class App extends Component {
   };
 
   calculate = () => {
-    const re = '^([-+]? ?(d+|(g<1>))( ?[-+*/] ?g<1>)?)$';
+    const re = /^([-+]? ?(d+|(g<1>))( ?[-+*/] ?g<1>)?)$/;
     let arr = this.state.display.split(re);
     console.log(arr);
     // arr.map((arrItem) => {
@@ -33,27 +41,28 @@ export default class App extends Component {
     // });
   };
 
-  operation = (operator) => {
-    //get the last number or operator
-    const last = this.state.display.slice(-1);
-    console.log(last);
-    // check if last entered is "-" or "."
-    if (['-', '.'].includes(last)) {
-      console.log('-.');
-      // Check for duplicates
-      if (last !== operator) {
-        this.setDisplay(operator);
-      }
-    }
-    //check if last entered is +,/,x and ignore it if it is.
-    else if (!['+', 'x', '/'].includes(last)) {
+  operator = (operator) => {
+    const last = this.state.last;
+    const display = this.state.display;
+    const minusOneString = display.slice(0, -1);
+    const re = /[+*/]/;
+    if (re.test(last)) {
+      this.setState({ display: minusOneString + operator, last: operator });
+    } else {
       this.setDisplay(operator);
     }
   };
 
+  minus = (minus) => {};
+
+  decimal = (decimal) => {};
+
   render() {
     const setDisplay = this.setDisplay;
-    const operation = this.operation;
+    const operator = this.operator;
+    const minus = this.minus;
+    const decimal = this.decimal;
+
     return (
       <div className="App">
         <div id="display">
@@ -71,11 +80,11 @@ export default class App extends Component {
         <Push symbol={'7'} calculate={setDisplay}></Push>
         <Push symbol={'8'} calculate={setDisplay}></Push>
         <Push symbol={'9'} calculate={setDisplay}></Push>
-        <Push symbol={'.'} calculate={operation}></Push>
-        <Push symbol={'+'} calculate={operation}></Push>
-        <Push symbol={'-'} calculate={operation}></Push>
-        <Push symbol={'x'} calculate={operation}></Push>
-        <Push symbol={'/'} calculate={operation}></Push>
+        <Push symbol={'.'} calculate={decimal}></Push>
+        <Push symbol={'+'} calculate={operator}></Push>
+        <Push symbol={'-'} calculate={minus}></Push>
+        <Push symbol={'*'} calculate={operator}></Push>
+        <Push symbol={'/'} calculate={operator}></Push>
         <Push symbol={'='} calculate={this.calculate}></Push>
       </div>
     );
