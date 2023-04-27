@@ -49,7 +49,11 @@ export default class App extends Component {
     }
   };
 
-  minus = (minus) => {};
+  minus = (minus) => {
+    const re = /([.]{1-2}[\d]*)$/g;
+    if (re.test(this.state.display)) return;
+    this.setDisplay(decimal);
+  };
 
   decimal = (decimal) => {
     const re = /([.]{1}[\d]*)$/g;
