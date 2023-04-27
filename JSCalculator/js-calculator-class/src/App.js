@@ -1,6 +1,7 @@
 import './App.scss';
 import React, { Component } from 'react';
 import Push from './components/Push';
+import { evaluate } from 'mathjs';
 
 export default class App extends Component {
   constructor(props) {
@@ -33,12 +34,7 @@ export default class App extends Component {
   };
 
   calculate = () => {
-    const re = /^([-+]? ?(d+|(g<1>))( ?[-+*/] ?g<1>)?)$/;
-    let arr = this.state.display.split(re);
-    console.log(arr);
-    // arr.map((arrItem) => {
-    //   Number(arrItem);
-    // });
+    this.setState({ answer: evaluate(this.state.display) });
   };
 
   operator = (operator) => {
@@ -55,7 +51,11 @@ export default class App extends Component {
 
   minus = (minus) => {};
 
-  decimal = (decimal) => {};
+  decimal = (decimal) => {
+    const re = /([.]{1}[\d]*)$/g;
+    if (re.test(this.state.display)) return;
+    this.setDisplay(decimal);
+  };
 
   render() {
     const setDisplay = this.setDisplay;
@@ -67,7 +67,7 @@ export default class App extends Component {
       <div className="App">
         <div id="display">
           <h1>{this.state.display}</h1>
-          <h1>Answer</h1>
+          <h1>{this.state.answer}</h1>
         </div>
         <Push symbol={'C'} calculate={this.clearDisplay}></Push>
         <Push symbol={'0'} calculate={this.leadingZero}></Push>
