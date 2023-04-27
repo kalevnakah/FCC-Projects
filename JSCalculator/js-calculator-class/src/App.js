@@ -8,9 +8,9 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      display: '42',
+      display: '',
       answer: '0',
-      last: '',
+      last: '0',
     };
     this.setDisplay = this.setDisplay.bind(this);
     this.removeLastFromDisplay = this.removeLastFromDisplay.bind(this);
@@ -27,38 +27,56 @@ export default class App extends Component {
     this.setDisplay(minusOneString);
   };
 
-  leadingZero = () => {};
-
   clearDisplay = () => {
-    this.setState({ display: '0' });
+    this.setState({ display: '', answer: '0' });
   };
 
   calculate = () => {
-    this.setState({ answer: evaluate(this.state.display) });
+    const newAnswer = evaluate(this.state.display);
+    this.setState({ answer: newAnswer, display: newAnswer });
   };
 
   operator = (operator) => {
     const last = this.state.last;
     const display = this.state.display;
-    const minusOneString = display.slice(0, -1);
-    const re = /[+*/]/;
-    if (re.test(last)) {
-      this.setState({ display: minusOneString + operator, last: operator });
-    } else {
+    const reOp = /[/*+-]/g;
+    const reNumAndOp = /([\d.][/*+-]{1})$/g;
+    const reNumAndTwoOp = /([\d.][/*+-]{2,})$/g;
+    const isNumber = !reOp.test(last);
+    if (isNumber) {
       this.setDisplay(operator);
+    } else if (reNumAndOp.test(display)) {
+      const minusOneString = display.slice(0, -1);
+      this.setState({ display: minusOneString + operator, last: operator });
+    } else if (reNumAndTwoOp.test(display)) {
+      const minusTwoString = display.slice(0, display.length - 2);
+      this.setState({ display: minusTwoString + operator, last: operator });
     }
   };
 
   minus = (minus) => {
-    const re = /([.]{1-2}[\d]*)$/g;
-    if (re.test(this.state.display)) return;
-    this.setDisplay(decimal);
+    const reNumAndOp = /([\d.][/*+-]?)$/g;
+    const display = this.state.display;
+    const minusOneString = display.slice(0, -1);
+    if (reNumAndOp.test(this.state.display)) {
+      this.setDisplay(minus);
+    } else {
+      this.setState({ display: minusOneString + minus, last: minus });
+    }
   };
 
   decimal = (decimal) => {
     const re = /([.]{1}[\d]*)$/g;
     if (re.test(this.state.display)) return;
     this.setDisplay(decimal);
+  };
+
+  leadingZero = (zero) => {
+    const last = this.state.last;
+    const reOp = /[\d.]/g;
+    if (reOp.test(last) && last !== '') {
+      this.setDisplay(zero);
+    }
   };
 
   render() {
