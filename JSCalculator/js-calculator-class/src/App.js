@@ -32,7 +32,10 @@ export default class App extends Component {
   };
 
   calculate = () => {
-    const newAnswer = evaluate(this.state.display);
+    let newAnswer = '';
+    if (this.state.display !== '') {
+      newAnswer = evaluate(this.state.display);
+    }
     this.setState({ answer: newAnswer, display: newAnswer });
   };
 
