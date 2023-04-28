@@ -94,7 +94,7 @@ export default class App extends Component {
           <h1>{this.state.display}</h1>
           <h1>{this.state.answer}</h1>
         </div>
-        <Push symbol={'C'} calculate={this.clearDisplay}></Push>
+        <Push symbol={'AC'} calculate={this.clearDisplay}></Push>
         <Push symbol={'0'} calculate={this.leadingZero}></Push>
         <Push symbol={'1'} calculate={setDisplay}></Push>
         <Push symbol={'2'} calculate={setDisplay}></Push>
