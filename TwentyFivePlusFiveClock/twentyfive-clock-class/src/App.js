@@ -1,11 +1,20 @@
+import React, { Component } from 'react';
 import './App.css';
+import Break from './components/Break';
+import Session from './components/Session';
+import Timer from './components/Timer';
 
-function App() {
-  return (
-    <div className="App">
-      <div id="main-title">"25 + 5 Clock"</div>
-    </div>
-  );
+export class App extends Component {
+  render() {
+    return (
+      <div>
+        <div id="main-title">"25 + 5 Clock"</div>
+        <Break />
+        <Session />
+        <Timer />
+      </div>
+    );
+  }
 }
 
 export default App;
