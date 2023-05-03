@@ -3,6 +3,7 @@ import './App.css';
 import Break from './components/Break';
 import Session from './components/Session';
 import Timer from './components/Timer';
+import song from './ticktock.mp3';
 
 export class App extends Component {
   constructor(props) {
@@ -12,10 +13,12 @@ export class App extends Component {
       sessionTime: 25,
       timeLeft: 1500000,
       timeDisplay: '25:00',
-      play: true,
+      play: false,
       breakState: false,
+      audio: new Audio(song),
     };
 
+    this.startStop = this.startStop.bind(this);
     this.countDown = this.countDown.bind(this);
     this.resetCounter = this.resetCounter.bind(this);
     this.incSession = this.incSession.bind(this);
@@ -25,7 +28,7 @@ export class App extends Component {
   }
 
   incSession() {
-    if (this.state.play) {
+    if (!this.state.play && this.state.sessionTime < 60) {
       let newSessionTime = this.state.sessionTime + 1;
       this.setState({ sessionTime: newSessionTime });
       if (!this.state.breakState) {
@@ -35,7 +38,7 @@ export class App extends Component {
   }
 
   decSession() {
-    if (this.state.play) {
+    if (!this.state.play && this.state.sessionTime > 1) {
       let newSessionTime = this.state.sessionTime - 1;
       this.setState({ sessionTime: newSessionTime });
       if (!this.state.breakState) {
@@ -45,7 +48,7 @@ export class App extends Component {
   }
 
   incBreak() {
-    if (this.state.play) {
+    if (!this.state.play && this.state.breakTime < 60) {
       let newBreakTime = this.state.breakTime + 1;
       this.setState({ breakTime: newBreakTime });
       if (this.state.breakState) {
@@ -55,7 +58,7 @@ export class App extends Component {
   }
 
   decBreak() {
-    if (this.state.play) {
+    if (!this.state.play && this.state.breakTime > 1) {
       let newBreakTime = this.state.breakTime - 1;
       this.setState({ breakTime: newBreakTime });
       if (this.state.breakState) {
@@ -65,44 +68,53 @@ export class App extends Component {
   }
 
   countDown() {
-    this.setState({ play: !this.state.play });
-    let x = setInterval(() => {
-      let distance = this.state.timeLeft - 1000;
-      if (!this.state.play) {
+    const x = setInterval(() => {
+      if (this.state.play === true) {
+        let distance = this.state.timeLeft - 1000;
         let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         let seconds = Math.floor((distance % (1000 * 60)) / 1000);
         this.setState({
-          timeDisplay: minutes + ':' + seconds,
+          timeDisplay:
+            (minutes > 9 ? minutes : '0' + minutes) +
+            ':' +
+            (seconds > 9 ? seconds : '0' + seconds),
           timeLeft: distance,
         });
-      }
-      if (distance <= 0) {
+        if (distance < 0) {
+          this.switchCounter();
+          clearInterval(x);
+        }
+      } else {
         clearInterval(x);
-        this.switchCounter();
       }
     }, 1000);
+  }
+
+  startStop(start = !this.state.play) {
+    this.setState({ play: start });
+    this.countDown();
   }
 
   switchCounter() {
     let newBreakState = !this.state.breakState;
     this.setState({ breakState: newBreakState });
     if (newBreakState) {
-      this.resetCounter(this.state.breakTime);
+      this.resetCounter(this.state.breakTime, true);
     } else {
-      this.resetCounter();
+      this.resetCounter(this.state.sessionTime, true);
     }
-    this.setState({ play: true });
-    this.countDown();
+    this.state.audio.play();
+    this.startStop(true);
   }
 
-  resetCounter(sessionTime = this.state.sessionTime) {
+  resetCounter(sessionTime = this.state.sessionTime, onOff = false) {
     let milSec = sessionTime * 60 * 1000;
     let fTime = sessionTime + ':00';
-    this.setState({ timeLeft: milSec, timeDisplay: fTime });
+    this.setState({ play: onOff, timeLeft: milSec, timeDisplay: fTime });
   }
 
   render() {
-    const { breakTime, sessionTime, timeDisplay } = this.state;
+    const { breakTime, sessionTime, timeDisplay, breakState } = this.state;
     return (
       <div>
         <div id="main-title">"25 + 5 Clock"</div>
@@ -119,7 +131,8 @@ export class App extends Component {
         <Timer
           timeDisplay={timeDisplay}
           resetCounter={this.resetCounter}
-          countDown={this.countDown}
+          startStop={this.startStop}
+          breakState={breakState}
         />
         <div>Designed and Coded by Crosswalk Coder</div>
       </div>
