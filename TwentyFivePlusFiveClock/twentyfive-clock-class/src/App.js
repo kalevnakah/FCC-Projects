@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
+//import './App.css';
+import './App.scss';
 import Break from './components/Break';
 import Session from './components/Session';
 import Timer from './components/Timer';
@@ -117,23 +118,25 @@ export class App extends Component {
     const { breakTime, sessionTime, timeDisplay, breakState } = this.state;
     return (
       <div>
-        <div id="main-title">"25 + 5 Clock"</div>
-        <Break
-          breakTime={breakTime}
-          incBreak={this.incBreak}
-          decBreak={this.decBreak}
-        />
-        <Session
-          sessionTime={sessionTime}
-          incSession={this.incSession}
-          decSession={this.decSession}
-        />
+        <div id="main-title">The Take Back Clock</div>
         <Timer
           timeDisplay={timeDisplay}
           resetCounter={this.resetCounter}
           startStop={this.startStop}
           breakState={breakState}
         />
+        <div className="flex">
+          <Break
+            breakTime={breakTime}
+            incBreak={this.incBreak}
+            decBreak={this.decBreak}
+          />
+          <Session
+            sessionTime={sessionTime}
+            incSession={this.incSession}
+            decSession={this.decSession}
+          />
+        </div>
         <div>Designed and Coded by Crosswalk Coder</div>
       </div>
     );

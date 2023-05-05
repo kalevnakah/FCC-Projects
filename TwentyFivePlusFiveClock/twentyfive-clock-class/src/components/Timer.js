@@ -5,7 +5,7 @@ export class Timer extends Component {
   render() {
     const { timeDisplay, startStop, resetCounter, breakState } = this.props;
     return (
-      <div>
+      <div className="box">
         <div id="timer-label">{breakState ? 'Break  ' : 'Session'}</div>
         <div id="time-left">{timeDisplay}</div>
         <Button
@@ -15,7 +15,7 @@ export class Timer extends Component {
             startStop();
           }}
         >
-          "Play / Pause"
+          {'\u23F5\u23F8'}
         </Button>
         <Button
           id="reset"
@@ -24,7 +24,7 @@ export class Timer extends Component {
             resetCounter();
           }}
         >
-          "Reset"
+          {'\u21BA'}
         </Button>
       </div>
     );
