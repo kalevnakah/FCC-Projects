@@ -1,7 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import Buttons from '../components/Buttons';
 
-const Quote = (props) => {
+const Quote = ({ quote, author, color, getRandomQuote }: QuoteProps) => {
   return (
     <div id="#quote-box" className="bg-white p-5 mw-50">
       <blockquote id="text" className={`blockquote color-${color} fs-3`}>
@@ -21,6 +20,11 @@ const Quote = (props) => {
   );
 };
 
-Quote.propTypes = {};
+type QuoteProps = {
+  quote: string;
+  author: string;
+  color: number;
+  getRandomQuote: Function;
+};
 
 export default Quote;

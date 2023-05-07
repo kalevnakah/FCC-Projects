@@ -1,9 +1,14 @@
-import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
 
-const Buttons = (props) => {
+type buttonProps = {
+  quote: string;
+  author: string;
+  color: number;
+  getRandomQuote: Function;
+};
+
+const Buttons = ({ quote, author, color, getRandomQuote }: buttonProps) => {
   return (
     <div className="d-flex justify-content-between">
       <div>
@@ -44,7 +49,5 @@ const Buttons = (props) => {
     </div>
   );
 };
-
-Buttons.propTypes = {};
 
 export default Buttons;
