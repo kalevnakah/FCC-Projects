@@ -1,5 +1,6 @@
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 type buttonProps = {
   quote: string;
@@ -20,7 +21,7 @@ const Buttons = ({ quote, author, color, getRandomQuote }: buttonProps) => {
           rel="noreferrer"
         >
           <FontAwesomeIcon
-            icon="fab fa-twitter-square"
+            icon={['fab', 'square-twitter']}
             className={`color-${color} fs-1`}
           />
         </a>
@@ -31,7 +32,7 @@ const Buttons = ({ quote, author, color, getRandomQuote }: buttonProps) => {
           rel="noreferrer"
         >
           <FontAwesomeIcon
-            icon="fab fa-tumblr-square"
+            icon={['fab', 'tumblr-square']}
             className={`color-${color} fs-1`}
           />
         </a>

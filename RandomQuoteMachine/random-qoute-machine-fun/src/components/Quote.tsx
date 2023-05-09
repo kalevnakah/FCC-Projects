@@ -1,5 +1,12 @@
 import Buttons from '../components/Buttons';
 
+type QuoteProps = {
+  quote: string;
+  author: string;
+  color: number;
+  getRandomQuote: Function;
+};
+
 const Quote = ({ quote, author, color, getRandomQuote }: QuoteProps) => {
   return (
     <div id="#quote-box" className="bg-white p-5 mw-50">
@@ -18,13 +25,6 @@ const Quote = ({ quote, author, color, getRandomQuote }: QuoteProps) => {
       />
     </div>
   );
-};
-
-type QuoteProps = {
-  quote: string;
-  author: string;
-  color: number;
-  getRandomQuote: Function;
 };
 
 export default Quote;
