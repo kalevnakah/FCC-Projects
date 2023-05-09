@@ -10,18 +10,10 @@ const App = () => {
     setMarkDown(event.target.value);
   };
 
-  const setSampleMarkdown = () => {
-    setMarkDown(sampleMarkdown);
-  };
-
   return (
     <div className="App row">
       <div className="col-6 bg-secondary">
-        <Input
-          text={markDown}
-          updateMarkdown={updateMarkdown}
-          sampleMarkdown={setSampleMarkdown}
-        />
+        <Input text={markDown} updateMarkdown={updateMarkdown} />
       </div>
       <div className="col-6">
         <Markdown text={markDown} />

@@ -1,8 +1,10 @@
+import React from 'react';
+import { FormControlProps } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 
 type formProps = {
   text: string;
-  updateMarkdown: Function;
+  updateMarkdown: React.ChangeEventHandler | undefined;
 };
 
 const Input = ({ text, updateMarkdown }: formProps) => {
