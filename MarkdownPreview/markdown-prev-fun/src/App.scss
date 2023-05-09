@@ -1,0 +1,34 @@
+.App {
+  text-align: center;
+}
+
+.markdown-container {
+  img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+  ul {
+    list-style-position: inside;
+    text-align: start;
+  }
+  ol {
+    list-style-position: inside;
+    text-align: start;
+  }
+  blockquote {
+    border-left: solid 2px black;
+    text-align: start;
+    margin-left: 2em;
+    padding-left: 1em;
+  }
+}
