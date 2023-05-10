@@ -13,11 +13,11 @@ const App = () => {
 
   const updateVolume = (newVolume: number) => {
     setVolume(newVolume);
-    setPressed('Volume: ${newVolume}');
+    setPressed('Volume: ' + newVolume);
   };
 
   useEffect(() => {
-    const clips = document.querySelectorAll('.clip');
+    const clips = document.querySelectorAll<HTMLAudioElement>('.clip');
     clips.forEach((audio) => (audio.volume = volume / 100));
   });
 
@@ -33,8 +33,8 @@ const App = () => {
         />
       </Col>
     ))
-    .reduce((rows, col, index) => {
-      let currentRow;
+    .reduce((rows: any[], col, index) => {
+      let currentRow: any[];
       if (index % 3 === 0) {
         currentRow = [];
         rows.push(currentRow);

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 
 type drumPadProps = {
@@ -9,16 +9,25 @@ type drumPadProps = {
   power: boolean;
 };
 
-const DrumPad = (props: drumPadProps) => {
-  const [powerState, setPower] = useState(props.power);
-  const { id, name, path, key } = props.pad;
+type padProps = {
+  id: string;
+  name: string;
+  path: string;
+  key: number;
+};
 
-  const sound = (id: string) => {
-    document.getElementById(id).play();
+const DrumPad = (props: drumPadProps) => {
+  const { id, name, path, key } = props.pad as padProps;
+
+  const sound = () => {
+    const audioElem = document.getElementById(id) as HTMLAudioElement;
+    if (audioElem != null || undefined) {
+      audioElem.play();
+    }
   };
 
-  const activate = (id: string) => {
-    const btn = document.getElementById('b' + id);
+  const activate = () => {
+    const btn = document.getElementById('b' + id) as HTMLElement;
     btn.classList.replace('bg-black', 'bg-primary');
     setTimeout(() => btn.classList.replace('bg-primary', 'bg-black'), 100);
   };
@@ -28,16 +37,16 @@ const DrumPad = (props: drumPadProps) => {
   };
 
   const btnClick = () => {
-    sound;
-    activate;
-    updateButtonPressed;
+    sound();
+    activate();
+    updateButtonPressed();
   };
 
-  const keyPress = (event) => {
+  const keyPress = (event: { keyCode: any }) => {
     if (event.keyCode === key && props.power) {
-      sound;
-      activate;
-      updateButtonPressed;
+      sound();
+      activate();
+      updateButtonPressed();
     }
   };
 
@@ -54,7 +63,7 @@ const DrumPad = (props: drumPadProps) => {
       size="lg"
       onClick={btnClick}
       id={'b' + id}
-      disabled={props.power}
+      disabled={!props.power}
     >
       <h1 id={'h' + id}>{id}</h1>
       <audio className="clip" src={path} id={id}></audio>
