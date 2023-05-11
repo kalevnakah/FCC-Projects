@@ -1,0 +1,54 @@
+@import './bootstrap/scss/bootstrap.scss';
+
+.App {
+  display: flex;
+  background-color: darkgoldenrod;
+  height: 100vh;
+  align-content: center;
+}
+
+.container {
+  display: flex;
+  width: max-content;
+  background-color: black;
+  margin: auto;
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+
+.read-out {
+  background-color: peachpuff;
+  color: darkred;
+  min-height: 1.2em;
+}
+
+.total {
+  background-color: yellowgreen;
+  color: darkgreen;
+}
+
+.pad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.grid-span-two {
+  grid-column: span 2;
+}
+
+.grid-span-four {
+  grid-column: span 4;
+}
+
+.grid-span-row-two {
+  grid-row: span 2;
+}
