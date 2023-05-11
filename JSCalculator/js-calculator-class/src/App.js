@@ -1,4 +1,5 @@
 import './App.scss';
+import './';
 import React, { Component } from 'react';
 import Push from './components/Push';
 import { evaluate } from 'mathjs';
@@ -89,28 +90,96 @@ export default class App extends Component {
     const decimal = this.decimal;
 
     return (
-      <div className="App">
-        <div id="display">
-          <h1>{this.state.display}</h1>
-          <h1>{this.state.answer}</h1>
+      <div className="App align-items-center text-center">
+        <div id="display" className="pad-grid container">
+          <h3 className="read-out grid-span-four">{this.state.display}</h3>
+          <h1 className="total grid-span-four">{this.state.answer}</h1>
+          <Push
+            className={'grid-span-two btn btn-danger'}
+            symbol={'AC'}
+            calculate={this.clearDisplay}
+          ></Push>
+          <Push
+            symbol={'/'}
+            calculate={operator}
+            className={'btn btn-info'}
+          ></Push>
+          <Push
+            symbol={'*'}
+            calculate={operator}
+            className={'btn btn-info'}
+          ></Push>
+          <Push
+            symbol={'7'}
+            calculate={setDisplay}
+            className={'btn btn-secondary'}
+          ></Push>
+          <Push
+            symbol={'8'}
+            calculate={setDisplay}
+            className={'btn btn-secondary'}
+          ></Push>
+          <Push
+            symbol={'9'}
+            calculate={setDisplay}
+            className={'btn btn-secondary'}
+          ></Push>
+          <Push
+            symbol={'-'}
+            calculate={minus}
+            className={'btn btn-info'}
+          ></Push>
+          <Push
+            symbol={'4'}
+            calculate={setDisplay}
+            className={'btn btn-secondary'}
+          ></Push>
+          <Push
+            symbol={'5'}
+            calculate={setDisplay}
+            className={'btn btn-secondary'}
+          ></Push>
+          <Push
+            symbol={'6'}
+            calculate={setDisplay}
+            className={'btn btn-secondary'}
+          ></Push>
+          <Push
+            symbol={'+'}
+            calculate={operator}
+            className={'btn btn-info'}
+          ></Push>
+          <Push
+            symbol={'1'}
+            calculate={setDisplay}
+            className={'btn btn-secondary'}
+          ></Push>
+          <Push
+            symbol={'2'}
+            calculate={setDisplay}
+            className={'btn btn-secondary'}
+          ></Push>
+          <Push
+            symbol={'3'}
+            calculate={setDisplay}
+            className={'btn btn-secondary'}
+          ></Push>
+          <Push
+            className={'grid-span-row-two btn btn-success'}
+            symbol={'='}
+            calculate={this.calculate}
+          ></Push>
+          <Push
+            className={'grid-span-two btn btn-primary'}
+            symbol={'0'}
+            calculate={this.leadingZero}
+          ></Push>
+          <Push
+            className={'btn btn-warning'}
+            symbol={'.'}
+            calculate={decimal}
+          ></Push>
         </div>
-        <Push symbol={'AC'} calculate={this.clearDisplay}></Push>
-        <Push symbol={'0'} calculate={this.leadingZero}></Push>
-        <Push symbol={'1'} calculate={setDisplay}></Push>
-        <Push symbol={'2'} calculate={setDisplay}></Push>
-        <Push symbol={'3'} calculate={setDisplay}></Push>
-        <Push symbol={'4'} calculate={setDisplay}></Push>
-        <Push symbol={'5'} calculate={setDisplay}></Push>
-        <Push symbol={'6'} calculate={setDisplay}></Push>
-        <Push symbol={'7'} calculate={setDisplay}></Push>
-        <Push symbol={'8'} calculate={setDisplay}></Push>
-        <Push symbol={'9'} calculate={setDisplay}></Push>
-        <Push symbol={'.'} calculate={decimal}></Push>
-        <Push symbol={'+'} calculate={operator}></Push>
-        <Push symbol={'-'} calculate={minus}></Push>
-        <Push symbol={'*'} calculate={operator}></Push>
-        <Push symbol={'/'} calculate={operator}></Push>
-        <Push symbol={'='} calculate={this.calculate}></Push>
       </div>
     );
   }
