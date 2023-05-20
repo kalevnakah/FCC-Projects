@@ -1,0 +1,63 @@
+$primaryColor: Black;
+$secondaryColor: lime;
+$primaryButton: lime;
+$textColor: lime;
+$secondaryTextColor: white;
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+body {
+  @include flexCenter;
+  min-height: 100vh;
+  color: $textColor;
+  font-size: 1.5em;
+  background-color: $primaryColor;
+  .setter-box {
+    display: block;
+    .setter-controls {
+      @include flexCenter;
+    }
+  }
+}
+
+button {
+  background-color: $primaryButton;
+  font-weight: bolder;
+  font-size: 3rem;
+  margin: 15px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.box {
+  border: 2px solid $secondaryColor;
+  border-radius: 10%;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.flex {
+  display: flex;
+  padding: 50px;
+  margin: 10px;
+}
+
+#time-left {
+  font-size: 5em;
+  color: $secondaryTextColor;
+  padding: 10px 50px 50px 50px;
+}
+
+#main-title {
+  font-size: 2em;
+  padding: 50px;
+}
+
+#timer-label {
+  font-size: 2em;
+}

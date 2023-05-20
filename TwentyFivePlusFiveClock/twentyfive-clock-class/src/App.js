@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import './App.css';
 import './App.scss';
 import Break from './components/Break';
 import Session from './components/Session';
