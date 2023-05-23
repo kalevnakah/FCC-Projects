@@ -1,3 +1,5 @@
+@import './bootstrap/scss/bootstrap.scss';
+
 $primaryColor: Black;
 $secondaryColor: lime;
 $primaryButton: lime;
@@ -17,16 +19,9 @@ body {
   color: $textColor;
   font-size: 1.5em;
   background-color: $primaryColor;
-  .setter-box {
-    display: block;
-    .setter-controls {
-      @include flexCenter;
-    }
-  }
 }
 
-button {
-  background-color: $primaryButton;
+Button {
   font-weight: bolder;
   font-size: 3rem;
   margin: 15px;
@@ -35,22 +30,23 @@ button {
 }
 
 .box {
+  max-width: min-content;
+  white-space: nowrap;
   border: 2px solid $secondaryColor;
-  border-radius: 10%;
-  padding: 2rem;
-  margin: 2rem;
+  border-radius: 25px;
+  padding: 1rem;
+  margin: 1rem 0;
 }
 
-.flex {
-  display: flex;
-  padding: 50px;
-  margin: 10px;
+.setter-controls {
+  @include flexCenter;
 }
 
 #time-left {
-  font-size: 5em;
+  @include flexCenter;
+  font-size: 5rem;
   color: $secondaryTextColor;
-  padding: 10px 50px 50px 50px;
+  padding: 1rem;
 }
 
 #main-title {
