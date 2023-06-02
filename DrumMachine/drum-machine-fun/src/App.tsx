@@ -8,7 +8,7 @@ import DrumSet1 from './DrumSet1.tsx';
 const App = () => {
   const [power, setPower] = useState(true);
   const [pressed, setPressed] = useState('Top Hat');
-  const [drumset, setDrumSet] = useState(DrumSet1);
+  const drumset = DrumSet1;
   const [volume, setVolume] = useState(25);
 
   const updateVolume = (newVolume: number) => {
