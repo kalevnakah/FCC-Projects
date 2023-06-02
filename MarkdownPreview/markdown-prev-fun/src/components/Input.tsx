@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormControlProps } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 
 type formProps = {
@@ -10,6 +9,7 @@ type formProps = {
 const Input = ({ text, updateMarkdown }: formProps) => {
   return (
     <Form.Control
+      id="editor"
       className="p-5"
       as="textarea"
       rows={45}

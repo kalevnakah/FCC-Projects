@@ -15,7 +15,7 @@ const App = () => {
       <div className="col-6 bg-secondary">
         <Input text={markDown} updateMarkdown={updateMarkdown} />
       </div>
-      <div className="col-6">
+      <div id="preview" className="col-6">
         <Markdown text={markDown} />
       </div>
     </div>

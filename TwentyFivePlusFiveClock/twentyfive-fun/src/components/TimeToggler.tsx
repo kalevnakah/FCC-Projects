@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 type timeTogglerProps = {
   type: string;
